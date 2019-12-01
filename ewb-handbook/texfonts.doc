@@ -1,0 +1,49 @@
+  //TeXフォントはType1形式でPSファイル中に埋め込まれるのでプリンタ側にフォントをインストールしておく必要はありません。
+
+//table[l(5w)]{
+//bkei
+//g{TFM名//}	//g{NFSS2形式名//}
+//bkei
+cmr10@@hbreak()//zu2{FONTFIG/cmr10.eps//}	OT1/cmr/m/n
+//tkei
+cmti10@@hbreak()//zu2{FONTFIG/cmti10.eps//}	OT1/cmr/m/it
+//tkei
+cmsl10@@hbreak()//zu2{FONTFIG/cmsl10.eps//}	OT1/cmr/m/sl
+//tkei
+cmcsc10@@hbreak()//zu2{FONTFIG/cmcsc10.eps//}	OT1/cmr/m/sc
+//tkei
+cmu10@@hbreak()//zu2{FONTFIG/cmu10.eps//}	OT1/cmr/m/u
+//tkei
+cmb10@@hbreak()//zu2{FONTFIG/cmb10.eps//}	OT1/cmr/b/n
+//tkei
+cmbx10@@hbreak()//zu2{FONTFIG/cmbx10.eps//}	OT1/cmr/bx/n
+//tkei
+cmtt10@@hbreak()//zu2{FONTFIG/cmtt10.eps//}	OT1/cmtt/m/n
+//tkei
+cmitt10@@hbreak()//zu2{FONTFIG/cmitt10.eps//}	OT1/cmtt/m/it
+//tkei
+cmsltt10@@hbreak()//zu2{FONTFIG/cmsltt10.eps//}	OT1/cmtt/m/sl
+//tkei
+cmtcsc10@@hbreak()//zu2{FONTFIG/cmcsc10.eps//}	OT1/cmtt/m/sc
+//tkei
+cmssl10@@hbreak()//zu2{FONTFIG/cmss10.eps//}	OT1/cmss/m/n
+//tkei
+cmssi10@@hbreak()//zu2{FONTFIG/cmssi10.eps//}	OT1/cmss/m/sl
+//tkei
+cmssdc10@@hbreak()//zu2{FONTFIG/cmssdc10.eps//}	OT1/cmss/sbc/n
+//tkei
+cmssbx10@@hbreak()//zu2{FONTFIG/cmssbx10.eps//}	OT1/cmss/bx/n
+//tkei
+cmdunh10@@hbreak()//zu2{FONTFIG/cmdunh10.eps//}	OT1/cmdh/m/n
+//tkei
+cmfib8@@hbreak()//zu2{FONTFIG/cmfib8.eps//}	OT1/cmfib/m/n
+//tkei
+cmff10@@hbreak()//zu2{FONTFIG/cmff10.eps//}	OT1/cmfr/m/n
+//tkei
+cmfi10@@hbreak()//zu2{FONTFIG/cmfi10.eps//}	OT1/cmfr/m/it
+//tkei
+cmmi10@@hbreak()//zu2{FONTFIG/cmmi10.eps//}	OML/cmm/m/it
+//tkei
+cmmib10@@hbreak()//zu2{FONTFIG/cmmib10.eps//}	OML/cmm/b/it
+//bkei
+//}

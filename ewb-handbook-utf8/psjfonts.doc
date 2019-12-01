@@ -1,0 +1,49 @@
+  縦書き書体の場合、TFM名の末尾が“-V”、NFSS形式名の先頭が“JT1”になります。
+  *が付いているフォントはダミーの書体見本です。
+//table[l(10w)l(12w)l(8w)]{
+//bkei
+//g{psstedでの名前//}	//g{TFM名//}	//g{NFSS2形式名//}
+//bkei
+Ryumin-Light@@hbreak()//zu2{FONTFIG/rmn-l.eps//}	Ryumin-Light-H	JY1/rmn/l/n
+//tkei
+Ryumin-regular@@hbreak()//zu2{FONTFIG/rmn-r.eps//}	Ryumin-regular-H	JY1/rmn/r/n
+//tkei
+Ryumin-Medium@@hbreak()//zu2{FONTFIG/rmn-m.eps//}	Ryumin-Medium-H	JY1/rmn/m/n
+//tkei
+Ryumin-Bold@@hbreak()//zu2{FONTFIG/rmn-b.eps//}	Ryumin-Bold-H	JY1/rmn/b/n
+//tkei
+Ryumin-heavy@@hbreak()//zu2{FONTFIG/rmn-h.eps//}	Ryumin-heavy-H	JY1/rmn/bx/n
+//tkei
+Ryumin-Ultra@@hbreak()//zu2{FONTFIG/rmn-u.eps//}	Ryumin-Ultra-H	JY1/rmn/u/n
+//tkei
+GothicBBB-Medium@@hbreak()//zu2{FONTFIG/gbbb-m.eps//}	GothicBBB-Medium-H	JY1/gbbb/m/n
+//tkei
+ShinGo-Light@@hbreak()//zu2{FONTFIG/sgo-l.eps//}	ShinGo-Light-H	JY1/sgo/l/n
+//tkei
+ShinGo-regular@@hbreak()//zu2{FONTFIG/sgo-r.eps//}	ShinGo-regular-H	JY1/sgo/r/n
+//tkei
+ShinGo-Medium@@hbreak()//zu2{FONTFIG/sgo-m.eps//}	ShinGo-Medium-H	JY1/sgo/m/n
+//tkei
+ShinGo-Bold@@hbreak()//zu2{FONTFIG/sgo-b.eps//}	ShinGo-Bold-H	JY1/sgo/b/n
+//tkei
+ShinGo-Ultra@@hbreak()//zu2{FONTFIG/sgo-u.eps//}	ShinGo-Ultra-H	JY1/sgo/u/n
+//tkei
+*GothicMB101-Bold@@hbreak()//zu2{FONTFIG/gmb-b.eps//}	GothicMB101-Bold-H	JY1/gmb/b/n
+//tkei
+*GothicMB101-Ult@@hbreak()//zu2{FONTFIG/gmb-u.eps//}	GothicMB101-Ult-H	JY1/gmb/u/n
+//tkei
+FutoMinA101-Bold@@hbreak()//zu2{FONTFIG/fmin-b.eps//}	FutoMinA101-Bold-H	JY1/fmin/b/n
+//tkei
+FutoGoB101-Bold@@hbreak()//zu2{FONTFIG/fgo-b.eps//}	FutoGoB101-Bold-H	JY1/fgo/b/n
+//tkei
+MidashiMin-MA31@@hbreak()//zu2{FONTFIG/mmc-m.eps//}	MidashiMin-MA31-H	JY1/mmc/m/n
+//tkei
+MidashiGo-MB31@@hbreak()//zu2{FONTFIG/mgo-m.eps//}	MidashiGo-MB31-H	JY1/mgo/m/n
+//tkei
+Jun101-Light@@hbreak()//zu2{FONTFIG/jun-l.eps//}	Jun101-Light-H	JY1/jun/l/n
+//tkei
+Jun34-Medium@@hbreak()//zu2{FONTFIG/jun-m.eps//}	Jun34-Medium-H	JY1/jun/m/n
+//tkei
+Jun501-Bold@@hbreak()//zu2{FONTFIG/jun-b.eps//}	Jun501-Bold-H	JY1/jun/b/n
+//bkei
+//}

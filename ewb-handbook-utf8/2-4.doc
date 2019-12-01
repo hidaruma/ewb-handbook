@@ -1,0 +1,578 @@
+chapter 4
+//i EWBの操作//small{―設定から簡単な出力まで―//}
+
+  EWBは、豊富な機能を実現するために、多くのプログラムから構成されるシステムです。出力のような簡単な処理を行う場合でも、たくさんのプログラムが内部的に起動されます。1つの作業をするのに、複雑な操作を行うのでは、コンピュータを使ったメリットが得られません。そこで、このEWBシステムを快適に使えるようにと、“EWB-Shelf”という編集者とEWBとの間を取り持つインターフェイスプログラムを用意しました。EWB-Shelfを使うことで、誰でも簡単に、そして効率的にEWBが使えるようになるのです。
+  この章では、EWB-Shelfの基本的な操作にあたる環境設定やプリンタへの出力などを中心に解説していきます。
+
+//ii //in167EWB-Shelfとは
+
+  EWB-Shelfは、EWBシステムの殻の部分に相当するもので、別名“原稿セット管理システム”と呼ばれています。編集者は、EWB-Shelfに対して簡単な命令を発行するだけで、EWBの機能をすべて利用できます。プリンタへのプリントアウト、X端末を使ったプレビュー、入稿用ファイルの作成などいったことが、コマンド1つで行えます（//f020401）。さらにEWB-Shelfには、台割りの管理などの編集作業を支援する役割りも備わっています。
+
+//f020401 EWB-Shelfの処理の流れ
+
+//iii EWB-Shelfとディレクトリの深い関係
+
+  EWB-Shelfでは、作成する本ごとに作業用ディレクトリを用意して、ファイルを管理します。このディレクトリが、EWB-Shelfにとっての“本”に相当するわけです。すなわち、「ディレクトリの中にあるファイルが“本”を構成する要素である」という考え方で作業を行っていきます。
+  EWB-Shelfを使うためには、章単位に分けられた原稿ファイルを、作成した作業ディレクトリにコピーし、EWB-Shelfに登録します。この登録された原稿ファイルの集まりのことを//g{原稿セット//}と呼び、“本の骨組み”に相当します（//f020402）。また、図や表がEWBで扱える形式のファイルで作成されている場合には、本文原稿と同様に、これらのファイルを作業ディレクトリにコピーします。この時、図表類のファイルを1つのサブディレクトリにまとめておくと、管理がしやすくなります。
+
+//f020402 EWB-Shelfにおける本とファイルの関係
+
+//iii EWB-Shelfの機能
+
+  原稿ファイルをEWB-Shelfに登録すると、EWB-Shelfを通してEWBの持つさまざまな機能を簡単に利用できます。
+
+//iii 出力
+
+  プリンタ出力やX端末を使ったプレビュー、入稿用ファイル作成などの作業を、コマンド1つで行えます。
+
+//iii 台割りの管理
+
+  原稿セットに登録された原稿には、順番に特定の番号が付けられます。EWB-Shelfは、この番号を使って各原稿の先頭ページ番号（ノンブル）を自動的に設定します。たとえば、1章の最終ページが37ページであった場合には、それに続く2章の先頭ページが自動的に計算されて、38ページになります。もちろん、章単位に先頭ページを自由に設定することもできます。
+
+//iii スタイルファイルの設定
+
+  前付け用や本文用などといった具合いに、異なったスタイルファイルを作成した場合には、それぞれの原稿に対して、スタイルファイルを設定することができます。
+
+//iii エラーリカバリー
+
+  プリンタ出力などを行う場合に、トリガの入力ミスが原因でエラーが発生することがあります。この時に、EWB-Shelfは自動的にエディタを起動し、その原稿ファイルを読み込んで、エラーの発生した行にカーソルを移動させます。ここで、入力ミスを修正して、エディタを終了させると、EWB-Shelfは再び同じコマンドを自動的に実行します。
+
+//iii ファイル相互依存関係の把握
+
+  EWBでは、ある原稿ファイルを出力するためには、“トリガ定義ファイル”や“スタイルファイル”などのさまざまなファイルを利用します。EWB-Shelfは、原稿ファイルとこれに伴う必要なファイルの関係を常に把握しています。たとえば、原稿をプリンタ出力する場面を考えてみてください。もし、あるスタイルファイルを更新した場合に、それに関係するファイルを1つ1つ確認して出力するのは、大変な労力です。EWB-Shelfでは、1つのスタイルファイルが更新された時に、どの原稿ファイルが出力に影響するかを調べ、影響のある原稿に対して組版処理を行ってから出力してくれます。もちろん、影響のない原稿に対しては、あらためて組版処理は行わず出力します。
+
+//ii EWB-Shelfのインストール
+
+  はじめてEWB-Shelfを使用する場合には、インストールという操作をしなければなりません。EWBマシンにログインして、“//in168/usr/local/ewb/3.3/ewbshelf/shelf-install”と入力してください。ただし、一度、インストールを行ってしまえば、2回目以降は必要ありません。
+
+//list2{
+% //sl{/usr/local/ewb/3.3/ewbshelf/shelf-install//}
+EWB-Shelf3.3原稿セット管理システムを組み込みます。
+
+bash用の設定を行います。
+
+ホームディレクトリの .bash_profile の最後に２行付け加えます。
+よろしいですか? (y/[n]) //sl{y//}
+ログインシェルが bash であれば次回ログインからEWBが使用できます。
+
+ホームディレクトリの .bash_logout の最後に１行付け加えます。
+よろしいですか? (y/[n]) //sl{y//}
+
+csh,tcsh用の設定を行います。
+
+ホームディレクトリの .cshrc の最後に２行付け加えます。
+よろしいですか? (y/[n]) //sl{y//}
+もとの .cshrc は .cshrc~ という名前に変更しました。
+ログインシェルが csh または tcsh であれば次回ログインからEWBが使用できます。
+%
+//}
+
+  これでインストール作業は終りです。念のために、正常にインストールされたかどうかを確認してみましょう。いったん、EWBマシンからログアウトして、もう一度ログインをしてみてください。ログイン時に、次のようなメッセージが表示されたら、正常にインストールされています。
+
+//list2{
+“EWB-Shelfバージョン3.3”が使えます。ヘルプはbook -hです。
+//}
+
+  もし、このようなメッセージが表示されなかった場合には、もう一度インストール作業を行ってください。
+  なお、コマンドシェルとしてbashを使用している場合は、
+
+//list2{
+shelf: ホームディレクトリにEWB用シェルスクリプト book22383 を作成しました
+//}
+
+のようなメッセージが出て、ホームディレクトリに book(番号) というファイルが作成されます。このファイルはshelfによる各種設定を反映させるためのものですので、EWBを使用中は削除しないでください（ログアウト時に自動的に消去されます）。
+
+//ii EWB-Shelfの操作
+
+  一度、インストール作業を行うと、ログインしただけでEWB-Shelfが使えるようになります。ここでは、実例に従って、原稿登録から出力までの操作を説明します。
+
+//iii 原稿の管理
+
+  EWBで本を作る時には、まず、作業ディレクトリを作成します。作成するディレクトリ名は、できるだけ書名に関連したわかりやすい名前がよいでしょう。
+
+//list2{
+% //sl{mkdir testbook//}
+% //sl{cd testbook//}
+%
+//}
+
+  このディレクトリに、必要な“原稿ファイル”や“スタイルファイル”、そして“トリガ定義ファイル”をコピーします。正しくコピーされていれば、ディレクトリの内容は、次のようになっているはずです。
+
+//list2{
+% //sl{ls//}
+chap1.doc       chap4.doc       chap8.doc       test.doc
+chap10.doc      chap5.doc       chap9.doc       test15.doc
+chap2.doc       chap6.doc       diff.sty        test2.doc
+chap3.doc       chap7.doc       ewb2latex.cls   triger.def
+%
+//}
+
+  ここで、“//in169book”と入力してみましょう。
+
+//list2{
+% //sl{book//}
+shelf: 原稿セットが定義されていません
+shelf: 環境変数 PATH を変更しました。戻すには 'book -d' を実行してください。
+//}
+
+  このようなメッセージが表示されるはずです。このメッセージが表示されない場合は、EWB-Shelfが正しくインストールされていません。もう一度、インストール操作を行ってください。
+  なお、EWB-Shelfは最初にbookコマンドを使用したときに環境変数PATH（実行ファイルの検索パス）を変更します。PATHを元に戻すにはログアウトするか“book -d”を入力します。
+
+//list2{
+% //sl{book -d//}
+shelf: 環境変数 PATH を元に戻しました。
+%
+//}
+
+//iii 原稿の登録
+
+  まずは、EWB-Shelfの原稿セットに、これから使用する原稿ファイルを登録します。//in170原稿ファイルの登録には、“//in171add、//in172insert、//in173addmulti”という命令を使います。
+では、“test.doc”を登録することにしましょう。
+
+//list2{
+% //sl{book add test.doc//}
+shelf: ワークディレクトリ`Work'が存在しません
+shelf: ワークディレクトリを作成しますか? //g{y//}
+shelf: ターゲットディレクトリ`Targets'が存在しません
+shelf: ターゲットディレクトリを作成しますか? //g{y//}
+  # Body       Document file          Page Style file      Options
+  1 test       test.doc               (*1) -               tex2
+%
+//}
+
+  EWB-Shelfは、EWBシステムが使用する作業用ディレクトリ//g{//in174Work//}（“//in175ワークディレクトリ”と呼ぶ）と、生成したファイルを保存するためのディレクトリ//g{//in176Targets//}（“//in177ターゲットディレクトリ”と呼ぶ）を作ります。最初に原稿の登録を行うと、この2つのディレクトリを作成するかどうかを尋ねてきますので、“y”を入力してください。
+それでは、続いて“test2.doc”を登録してみましょう。
+
+//list2{
+% //sl{book add test2.doc//}
+  # Body       Document file          Page Style file      Options
+  1 test       test.doc               (*1) -               tex2
+  2 test2      test2.doc              (?0) -               tex2
+%
+//}
+
+  このような表示が現われます。ここで、この表示の意味を説明しましょう。
+
+//k1{
+//g{#（//in178原稿番号）//}//|登録された原稿には、“原稿番号”という数字が割り振られます。原稿番号は、EWB-Shelfに対する命令の中で使用されます。
+//g{Body（//in179本体名）//}//|原稿ファイル名から拡張子を取ったものを、“本体名”と呼びます。本体名は、EWB-Shelfに対する命令の中で使われます。
+//g{Document file（原稿ファイル名）//}//|登録した原稿のファイル名です。
+//g{Page（開始ページ）//}//|その原稿ファイルの先頭ページ番号（ノンブル）を表しています。原稿を登録した時点では、未定になっています。
+//g{Style file（スタイルファイル）//}//|使用するスタイルファイルの名前です。原稿を登録した時点では、“ewb2latex.sty”を使用することになっています。
+//g{Options（//in180オプション）//}//|原稿に対するその他（オプション）の設定が表示されます。
+//}
+
+  “//in181add命令”は、原稿を原稿セットに追加する命令です。この命令では、すでに登録されている原稿の次に付加されます。一方、“//in182insert命令”は、原稿を原稿セットの好きな位置に挿入する命令です。
+  たとえば、原稿“test15.doc”を2番目に挿入してみます。
+
+//list2{
+% //sl{book 2 insert test15.doc//}
+  # Body       Document file          Page Style file      Options
+  1 test       test.doc               (*1) -               tex2
+  2 test15     test15.doc             (?0) -               tex2
+  3 test2      test2.doc              (?0) -               tex2
+%
+//}
+
+  このように“insert命令”では、挿入したい原稿番号を指定します。
+  それでは、次に複数の原稿ファイルを、一度に登録する方法を説明します。まとめて原稿ファイルを登録するには、“//in183addmulti”という命令を使います。
+  たとえば、“chap1.doc, chap2.doc, ..., chap10.doc”という複数の原稿をまとめて登録してみます。
+
+//list2{
+% //sl{book addmulti chap*.doc//}
+  # Body       Document file          Page Style file      Options
+  1 test       test.doc               (*1) -               tex2
+  2 test15     test15.doc             (?0) -               tex2
+  3 test2      test2.doc              (?0) -               tex2
+  4 chap1      chap1.doc              (?0) -               tex2
+  5 chap10     chap10.doc             (?0) -               tex2
+  6 chap2      chap2.doc              (?0) -               tex2
+  7 chap3      chap3.doc              (?0) -               tex2
+  8 chap4      chap4.doc              (?0) -               tex2
+  9 chap5      chap5.doc              (?0) -               tex2
+ 10 chap6      chap6.doc              (?0) -               tex2
+ 11 chap7      chap7.doc              (?0) -               tex2
+ 12 chap8      chap8.doc              (?0) -               tex2
+ 13 chap9      chap9.doc              (?0) -               tex2
+%
+//}
+
+//iii //in185原稿の登録解除
+
+  原稿ファイルを原稿セットから解除するには、“//in184delete”という命令を使います。“test.doc, test15.doc, test2.doc”の登録を解除します。この命令は、原稿ファイルを削除するわけでないので、原稿ファイルを失うことはありません。
+
+//list2{
+% //sl{book delete 1//}
+  # Body       Document file          Page Style file      Options
+  1 test15     test15.doc             (*1) -               tex2
+  2 test2      test2.doc              (?0) -               tex2
+  3 chap1      chap1.doc              (?0) -               tex2
+  4 chap10     chap10.doc             (?0) -               tex2
+  .........省略
+% //sl{book delete 1//}
+  # Body       Document file          Page Style file      Options
+  1 test2      test2.doc              (*1) -               tex2
+  2 chap1      chap1.doc              (?0) -               tex2
+  3 chap10     chap10.doc             (?0) -               tex2
+  4 chap2      chap2.doc              (?0) -               tex2
+  .........省略
+% //sl{book delete 1//}
+  # Body       Document file          Page Style file      Options
+  1 chap1      chap1.doc              (*1) -               tex2
+  2 chap10     chap10.doc             (?0) -               tex2
+  3 chap2      chap2.doc              (?0) -               tex2
+  4 chap3      chap3.doc              (?0) -               tex2
+  .........省略
+//}
+
+  なお、この命令は、原稿ファイル名ではなく原稿番号を指定します。
+
+//iii //in186原稿の順序変更
+
+  すでに登録された原稿の順番を変えるには、“//in187move”と“//in188exchange”という命令を使います。“//in190move”命令は、2つの原稿番号を指定し、最初に指定した原稿番号の原稿ファイルを、2番目に指定した原稿番号の位置に移動します。
+
+//list2{
+% //sl{book//}
+  # Body       Document file          Page Style file      Options
+  1 chap1      chap1.doc              (*1) -               tex2
+  2 chap10     chap10.doc             (?0) -               tex2
+  3 chap2      chap2.doc              (?0) -               tex2
+  .........省略
+  8 chap7      chap7.doc              (?0) -               tex2
+  9 chap8      chap8.doc              (?0) -               tex2
+ 10 chap9      chap9.doc              (?0) -               tex2
+% //sl{book move 2 10//}
+  # Body       Document file          Page Style file      Options
+  1 chap1      chap1.doc              (*1) -               tex2
+  2 chap2      chap2.doc              (?0) -               tex2
+  3 chap3      chap3.doc              (?0) -               tex2
+  .........省略
+  7 chap7      chap7.doc              (?0) -               tex2
+  8 chap8      chap8.doc              (?0) -               tex2
+  9 chap9      chap9.doc              (?0) -               tex2
+ 10 chap10     chap10.doc             (?0) -               tex2
+//}
+
+  また、“//in189exchange”命令は2つの原稿の位置を入れ換えます。“move”命令と同じように2つの原稿番号を指定してください。
+
+//iii 原稿出力
+
+  ここでは、プリンタ出力とX端末プレビューの方法について説明します。
+
+//iii //in191プリンタ出力
+
+  原稿登録が終了したら、さっそく、プリンタに“chap1.doc”を出力してみましょう。プリンタ出力には、“//in194out”または“//in195OUT”という命令を使います。“out”と“OUT”の違いは、EPSファイルが含まれる場合に“out”ではEPSファイルをその大きさの枠だけで出力し、“OUT”では図としてそのまま出力します。通常は“OUT”でよいでしょう。“chap1.OUT”と入力します。
+
+//list2{
+% //sl{chap1.OUT//}
+debug ' ewb2latex -y -f ../triger.def  -s ../ewb2latex.cls  -P `cat chap1.fpg` -
+T idx.tmp -o chap1.tex ../chap1.doc '
+pl-new chap1.tex && pl-new chap1.tex &&  :
+This is pTeX, Version p2.1.9, based on TeX, Version 3.14159 (EUC) (Web2C 7.3.1)
+(chap1.tex
+pLaTeX2e <1996/03/05>+2 (based on LaTeX2e <1996/06/01> patch level 0)
+(../ewb2latex.cls
+Document Class: ewb2latex 1996/10/31 19:59 Document style for `pssted sample fil
+e'
+*** make dvi for printer ***
+(/usr/local/ewb/3.3/ewbmacros/lib/ewbbase3_3.sty
+(/usr/local/ewb/3.3/ewbmacros/lib/cm/OT1cmr.fd)
+(/usr/local/ewb/3.3/ewbmacros/lib/cm/OT1cmtt.fd)
+(/usr/local/ewb/3.3/ewbmacros/lib/cm/OMLcmm.fd)
+  .........省略
+(see the transcript file for additional information)
+Output written on chap1.dvi (9 pages, 32252 bytes).
+Transcript written on chap1.log.
+mv chap1.dvi chap1.Dvi
+/usr/local/ewb/3.3/bin/indexassign -i idx.tmp -o tmp.idx chap1.idx && mv tmp.idx
+ chap1.idx 
+/usr/local/ewb/3.3/bin/dvips -N0 -mode supre -D2400 -M -O-10mm,0mm -s -o ../Targ
+ets/chap1.PS ../Targets/chap1.Dvi 
+This is dvipsk 5.86 p1.5c Copyright 1996-2000 ASCII Corp.(www-ptex@ascii.co.jp)
+based on dvipsk 5.86 Copyright 1999 Radical Eye Software (www.radicaleye.com)
+' TeX output 1996.12.16:1657' -> ../Targets/chap1.PS
+dvips: no match for special paper size found; using default
+<texc.pro><cmtt9.pfb><cmsy10.pfb><cmex10.pfb><cmmi10.pfb><cmr10.pfb>
+<cmtt10.pfb><texps.pro><special.pro><color.pro>. [1] [2] [3] [4] [5] [6] [7] 
+[8] [9] 
+pspr ../Targets/chap1.PS 
+%
+//}
+
+  “chap1.OUT”という命令で、“トリガの文法解析、組版、プリンタへの出力”という処理が、一度に行われます。この1つの操作で、プリンタから出力されるはずです。複数のプリンタが繋がっていて、プリンタを選んで出力したい場合は、“out”命令に続いてプリンタ名を入力します。“pslp2”という名前のプリンタに出力してみましょう。
+
+//list2{
+% //sl{chap1.OUT pslp2//}
+pspr -s-10 -P"pslp2" ../Targets/chap1.PS
+//}
+
+  今度は、“//in514pspr”というプリンタ出力の処理だけが実行されています。この理由は、EWB-Shelfが常に原稿ファイルの更新が行われたかどうかを監視しているからです。“chap1.doc”という原稿ファイルがすでに組版までを終え、それ以後原稿が更新されていないため、同じ“out”命令を実行しても、プリントアウトしか行われないのです。また、一度プリンタ設定をすると、ログアウトまで有効となります。
+  さらに、出力するページ範囲の指定もできます。“out”に続いて、ページ範囲を入力してください。
+
+//list2{
+% //sl{chap1.OUT 2 4-6 8//}
+dviselect -i ../Targets/chap1.Dvi  2 4-6 8 > tmp.dvi ; dvips -N0 -mode supre -D2
+400 -o tmp.ps tmp.dvi ; pspr -Ppslp2 tmp.ps 
+[2] [4] [5] [6] [8]
+Wrote 5 pages, 18384 bytes
+This is dvipsk 5.86 p1.5c Copyright 1996-2000 ASCII Corp.(www-ptex@ascii.co.jp)
+based on dvipsk 5.86 Copyright 1999 Radical Eye Software (www.radicaleye.com)
+' TeX output 2000.12.19:1212' -> ../Targets/tmp.ps
+dvips: no match for special paper size found; using default
+<texc.pro><cmtt9.pfb><cmsy10.pfb><cmr10.pfb><cmtt10.pfb><cmmi10.pfb>
+<texps.pro><special.pro><color.pro>. [2] [4] [5] [6] [8] 
+//}
+
+  この例では、“chap1.docの2, 4～6, 8ページ”を出力しています。このように、継続するページは“-”（半角ハイフン）を使い、個別のページは“半角スペース”で区切って指定します。
+  最後に、//in11用紙サイズの指定方法を説明します。“out”命令でプリントアウトすると、通常は“A4用紙”を使用して出力されますが，この用紙サイズは“form”という命令で変更することができます。ここで、“B4用紙”を使用して出力する指定をしてみましょう。
+
+//list2{
+% //sl{book form B4//}
+★：用紙[B4]を選択しました。
+  # Body       Document file          Page Style file      Options
+  1 chap1      chap1.doc              (*1) -               tex2
+  3 chap2      chap2.doc              (?0) -               tex2
+  3 chap3      chap3.doc              (?0) -               tex2
+  .........省略
+  9 chap9      chap9.doc              (?0) -               tex2
+ 10 chap10     chap10.doc             (?0) -               tex2
+//}
+
+  この例のように、“//in589form”命令は用紙サイズを引数で指定します。用紙サイズにはB5、A4、B4、A3が指定できますが、プリンタがその用紙サイズに対応している必要があります。
+  また、2ページずつ見開きで印刷することもできます。“form”命令の用紙指定で、用紙サイズの後ろに“W”を付加して指定すると見開き印刷を指定したことになります。
+
+//list2{
+% //sl{book form A3W//}
+★：用紙[A3]（見開き）を選択しました。
+  # Body       Document file          Page Style file      Options
+  1 chap1      chap1.doc              (*1) -               tex2
+  3 chap2      chap2.doc              (?0) -               tex2
+  3 chap3      chap3.doc              (?0) -               tex2
+  .........省略
+  9 chap9      chap9.doc              (?0) -               tex2
+ 10 chap10     chap10.doc             (?0) -               tex2
+//}
+
+  このとき、用紙は横長で使用されます。実際のページの2ページ分に対して用紙サイズが小さいと、はみ出してしまいますので注意してください。
+
+//iii //in192X端末での//in193プレビュー
+
+  もし、X端末を使える状況にあれば、X端末上でページイメージを確認できます。このプレビューには、“//in196pre”または“//in197PRE”という命令を使用します。プリンタ出力の時と同じように、“pre”はEPSファイルを枠で表し、“PRE”はEPSファイルをそのまま表示します。EPSの表示には時間が掛かるので、レイアウトの確認だけなら“pre”でいいでしょう。。本体名に続いて“.pre”または“.PRE”と指定します。“chap1.pre”と入力してみます。
+
+//list2{
+% //sl{chap1.pre//}
+debug ' ewb2latex -y -e -f ../triger.def  -s ../ewb2latex.cls  -P `cat chap1.fpg
+` -T idx.tmp -o chap1.tex ../chap1.doc '
+pl-new chap1.tex && pl-new chap1.tex &&  :
+This is pTeX, Version p2.1.9, based on TeX, Version 3.14159 (EUC) (Web2C 7.3.1)
+(chap1.tex
+pLaTeX2e <1996/03/05>+2 (based on LaTeX2e <1996/06/01> patch level 0)
+(../ewb2latex.cls
+Document Class: ewb2latex 1996/10/31 19:59 Document style for `pssted sample fil
+e'
+*** make dvi for previewer ***
+(/usr/local/ewb/3.3/ewbmacros/lib/ewbbase3_3.sty
+(/usr/local/ewb/3.3/ewbmacros/lib/cm/OT1cmr.fd)
+(/usr/local/ewb/3.3/ewbmacros/lib/cm/OT1cmtt.fd)
+  .........省略
+(see the transcript file for additional information)
+Output written on chap1.dvi (9 pages, 32244 bytes).
+Transcript written on chap1.log.
+/usr/local/ewb/3.3/bin/indexassign -i idx.tmp -o tmp.idx chap1.idx && mv tmp.idx
+ chap1.idx 
+/usr/local/ewb/3.3/bin/dvips -N0 -mode supre -D2400 -M -O-10mm,0mm -s -o ../Targ
+ets/chap.ps ../Targets/chap1.dvi
+dvips -N0 -mode supre -D2400 -o ../Targets/chap1.ps tmp.dvi
+This is dvipsk 5.86 p1.5c Copyright 1996-2000 ASCII Corp.(www-ptex@ascii.co.jp)
+based on dvipsk 5.86 Copyright 1999 Radical Eye Software (www.radicaleye.com)
+' TeX output 2000.12.19:1212' -> ../Targets/chap1.ps
+dvips: no match for special paper size found; using default
+<texc.pro><cmtt9.pfb><cmsy10.pfb><cmex10.pfb><cmmi10.pfb><cmr10.pfb>
+<cmtt10.pfb><texps.pro><special.pro><color.pro>. [1] [2] [3] [4] [5] [6] [7] 
+[8] [9] 
+ghostview -a4  ../Targets/chap1.ps  
+//}
+
+  プレビューは“q”キーで終了します。
+  プレビューを開始するページ番号の指定ができます。“pre”に続いて、ページ番号を入力してください。
+
+//list2{
+% //sl{chap1.pre 3//}
+ghostview -a4 -page  3 ../Targets/chap1.ps  
+//}
+
+
+//iii 開始//in199ページ番号の設定
+
+  EWB-Shelfは、原稿番号に従って自動的にノンブルを振ります。ここで、原稿セットの状態を見るために、“book”と入力してみます。
+
+//list2{
+% //sl{book//}
+  # Body       Document file          Page Style file      Options
+  1 chap1      chap1.doc               (1) -               tex2
+  2 chap2      chap2.doc             (*10) -               tex2
+  3 chap3      chap3.doc              (?0) -               tex2
+  4 chap4      chap4.doc              (?0) -               tex2
+  5 chap5      chap5.doc              (?0) -               tex2
+  6 chap6      chap6.doc              (?0) -               tex2
+  7 chap7      chap7.doc              (?0) -               tex2
+  8 chap8      chap8.doc              (?0) -               tex2
+  9 chap9      chap9.doc              (?0) -               tex2
+ 10 chap10     chap10.doc             (?0) -               tex2
+%
+//}
+
+  “Page”という項目を見てください。“chap1.doc”のところが“（1）”になっています。これは、“chap1.doc”の組版がすでに終り、その先頭ページが1ページであるということを示しています。次に“chap2.doc”を見てみると、“（*10）”となっています。これは、“chap1.doc（chap2.docの前）”を組版した結果、“chap1.doc”が9ページで終り、これに続く“chap2.doc”は10ページからはじまるということを意味します。“chap3.doc”以降は、“（?0）”となっていますが、これはまだページ番号が未定であることを表しています。このように、EWB-Shelfは1つ前の原稿の組版結果から先頭ページを自動的に決定します。
+  また、明示的に、章の先頭ページを指定する場合は、“//in198page”という命令を使います。
+
+//list2{
+% //sl{book 1 page 21//}
+  # Body       Document file          Page Style file      Options
+  1 chap1      chap1.doc              *21  -               tex2
+  2 chap2      chap2.doc             (*10) -               tex2
+  3 chap3      chap3.doc              (?0) -               tex2
+  .........省略
+  7 chap7      chap7.doc              (?0) -               tex2
+  8 chap8      chap8.doc              (?0) -               tex2
+  9 chap9      chap9.doc              (?0) -               tex2
+ 10 chap10     chap10.doc             (?0) -               tex2
+%
+//}
+
+  これで、“chap1.doc”の先頭ページが21ページになります。明示的に指定した場合は、”Page”項目の括弧がなくなります。もう一度、“chap1”を出力してみましょう。
+
+//list2{
+% //sl{chap1.OUT//}
+debug ' ewb2latex -y -f ../triger.def  -s ../ewb2latex.cls  -P `cat chap1.fpg` -
+T idx.tmp -o chap1.tex ../chap1.doc '
+pl-new chap1.tex && pl-new chap1.tex &&  :
+This is pTeX, Version p2.1.9, based on TeX, Version 3.14159 (EUC) (Web2C 7.3.1)
+(chap1.tex
+pLaTeX2e <1996/03/05>+2 (based on LaTeX2e <1996/06/01> patch level 0)
+(../ewb2latex.cls
+Document Class: ewb2latex 1996/10/31 19:59 Document style for `pssted sample fil
+e'
+*** make dvi for printer ***
+(/usr/local/ewb/3.3/ewbmacros/lib/ewbbase3_3.sty
+(/usr/local/ewb/3.3/ewbmacros/lib/cm/OT1cmr.fd)
+(/usr/local/ewb/3.3/ewbmacros/lib/cm/OT1cmtt.fd)
+(/usr/local/ewb/3.3/ewbmacros/lib/cm/OMLcmm.fd)
+  .........省略
+(see the transcript file for additional information)
+Output written on chap1.dvi (9 pages, 32252 bytes).
+Transcript written on chap1.log.
+mv chap1.dvi chap1.Dvi
+/usr/local/ewb/3.3/bin/indexassign -i idx.tmp -o tmp.idx chap1.idx && mv tmp.idx
+ chap1.idx 
+/usr/local/ewb/3.3/bin/dvips -N0 -mode supre -D2400 -M -O-10mm,0mm -s -o ../Targ
+ets/chap1.PS ../Targets/chap1.Dvi 
+This is dvipsk 5.86 p1.5c Copyright 1996-2000 ASCII Corp.(www-ptex@ascii.co.jp)
+based on dvipsk 5.86 Copyright 1999 Radical Eye Software (www.radicaleye.com)
+' TeX output 2000.12.19:1212' -> ../Targets/chap1.PS
+dvips: no match for special paper size found; using default
+<texc.pro><cmtt9.pfb><cmsy10.pfb><cmex10.pfb><cmmi10.pfb><cmr10.pfb>
+<cmtt10.pfb><texps.pro><special.pro><color.pro>. [21] [22] [23] [24] [25] 
+[26] [27] [28] [29] 
+pspr -Ppslp2 ../Targets/chap1.PS 
+% //sl{book//}
+  # Body       Document file          Page Style file      Options
+  1 chap1      chap1.doc               21  -               tex2
+  2 chap2      chap2.doc             (*30) -               tex2
+  3 chap3      chap3.doc              (?0) -               tex2
+  4 chap4      chap4.doc              (?0) -               tex2
+  5 chap5      chap5.doc              (?0) -               tex2
+  6 chap6      chap6.doc              (?0) -               tex2
+  7 chap7      chap7.doc              (?0) -               tex2
+  8 chap8      chap8.doc              (?0) -               tex2
+  9 chap9      chap9.doc              (?0) -               tex2
+ 10 chap10     chap10.doc             (?0) -               tex2
+%
+//}
+
+  “chap1”の先頭ページが21ページに、“chap2”の先頭ページが30ページになっていることがわかります。
+  ただし、この命令でページを変更すると入稿のための面付け時に折りとページの関係がおかしくなることがあります。この命令は途中からノンブルの体裁が変わるような本の場合にのみ使用してください。
+
+//iii //in200スタイルファイルの変更
+
+  以前にも述べたように、EWB-Shelfを使うと、複数のスタイルファイルを別々に指定することができます。原稿を組版する時には、通常、本文用のスタイルファイル“ewb2latex.cls”が使われますが、原稿によっては別のスタイルファイルを使って組版しなければなりません。このような場合には、“//in201style”という命令を使って、スタイルファイルを切り替えます。それでは、“chap10”のスタイルファイルを“appendix.cls”に変更してみましょう。この指定には原稿番号を使います。
+
+//list2{
+% //sl{book 10 style appendix.cls//}
+  # Body       Document file          Page Style file      Options
+  1 chap1      chap1.doc               21  -               tex2
+  2 chap2      chap2.doc             (*31) -               tex2
+  3 chap3      chap3.doc              (?0) -               tex2
+  4 chap4      chap4.doc              (?0) -               tex2
+  5 chap5      chap5.doc              (?0) -               tex2
+  6 chap6      chap6.doc              (?0) -               tex2
+  7 chap7      chap7.doc              (?0) -               tex2
+  8 chap8      chap8.doc              (?0) -               tex2
+  9 chap9      chap9.doc              (?0) -               tex2
+ 10 chap10     chap10.doc             (?0) appendix.cls    tex2
+%
+//}
+
+//ii //in202エラーリカバリー
+
+  これまでは、原稿入力から出力までの処理がすべてうまくいっているということを前提にして、お話を進めてきました。しかし、大抵の場合は、入力ミスなどでエラーが発生するものです。
+  ここでは、EWB-Shelfがエラーに対してどのような対処をするのかを見ていきましょう。
+
+//iii トリガの入力ミス
+
+たとえば、“chap1.doc”の中で、“////g{”と入れるべきところを“////G{”と入力していたとします。
+//list2{
+  .........省略
+  ////g{ダイレクトリンク////g}と////g{モデムリンク////g}の場合には、自分のシステムのシリ
+アル回線（RS-232）を通信媒体として使うことになる。ダイレクトリンクではシステムと
+システムとを直接ケーブルで接続し、モデムリンクではケーブルをモデムに接続する。
+　本章では、RS-232のケーブル接続、モデム、シリアル回線の通信パラメータを制御する
+UNIXのシステムファイルについて解説していく。
+　//sl{////G{//}ローカルエリアネットワーク（LAN）////g}には数多くの種類があり、それぞれ設定
+条件が異なる。ローカルエリアネットワークの物理的な設定方法は、本書では扱わない（
+既存のLANを利用するときのUUCPの設定方法については、次章で述べる）。したがって、
+詳細についてはシステムに添付されているマニュアルを参照してほしい。
+
+////ii　シリアルケーブルの作製
+
+  .........省略
+//}
+
+  この状態で出力してみましょう。
+
+//list2{
+% //sl{chap1.out//}
+debug ' ewb2latex -y -f ../triger.def  -s ../ewb2latex.cls  -P `cat chap1.fpg` -
+T idx.tmp -o chap1.tex ../chap1.doc '
+../chap1.doc(12行):未定義トリガがあります
+../chap1.doc(14行):ブロック////g(12行)を閉じていません
+../chap1.doc:エラー発生:pass1
+//}
+
+  このようなエラーが表示がされた後に、エディタ“jvim”（日本語対応vi）が立ち上がります。
+
+//list2{
+　本章では、RS-232のケーブル接続、モデム、シリアル回線の通信パラメータを制御する
+UNIXのシステムファイルについて解説していく。
+■////G{ローカルエリアネットワーク（LAN）////g}には数多くの種類があり、それぞれ設定
+条件が異なる。ローカルエリアネットワークの物理的な設定方法は、本書では扱わない（
+既存のLANを利用するときのUUCPの設定方法については、次章で述べる）。したがって、
+詳細についてはシステムに添付されているマニュアルを参照してほしい。
+////ii　シリアルケーブルの作製
+　Electronic Industries Association（EIA；米国電子工業会）によるRS-232C規格（ふ
+つうは単にRS-232と呼ぶ）では、コンピュータや端末とモデムを接続するシリアルケーブ
+ルについて規定している。この規格を拡大解釈することによって（規格違反とまではいか
+ないにせよ）、RS-232ケーブルはモデムのみならず、端末、プリンタ、他のコンピュータ
+上のポートなどあらゆる種類のシリアルデバイスの接続に利用できるようになっている。
+"/tmp/chap1.doc25558" 497 lines, 50351 characters
+//}
+
+  そして、エラーのある行の先頭にカーソルが移動します。もし、あなたが“vi”を操作できるのであれば、ここで入力ミスを訂正して、保存と終了を行ってください。すると、EWB-Shelfは再び出力処理を実行しはじめます。このように、EWB-Shelfには入力ミスによるエラーに対して、処理を中断せずにエラーを修正する機能が備わっています。
+  もし、“vi”が苦手であれば、エラーのある位置をメモして、“:q”と入力しリターンキーを押してください。EWB-Shelfは実行を終了します。
+
+//list2{
+デバッグされなかったようなので終了します
+shelf: 終了ステータス1.終了します
+%
+//}
+
+  ここで、好みのエディタを使って入力ミスを修正して、もう一度“chap1.OUT”と入力してください。

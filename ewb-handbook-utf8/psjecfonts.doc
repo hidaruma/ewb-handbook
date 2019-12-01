@@ -1,0 +1,35 @@
+  和文フォントに対するコンスタントピッチの従属欧文フォントです。
+
+//table[l(24w)l(5w)l]{
+//bkei
+//g{psstedでの名前（和文書体名）//}	//g{TFM名//}	//g{NFSS2形式名//}
+//bkei
+Ryumin-Light.Roman（Ryumin-Light）@@hbreak()//zu2{FONTFIG/rprmlr.eps//}	rprmlr	JE1/rmn/l/f
+//tkei
+GothicBBB-Medium.Roman（GothicBBB-Medium）@@hbreak()//zu2{FONTFIG/rpgbmr.eps//}	rpgbmr	JE1/gbbb/m/f
+//tkei
+ShinGo-Light.Roman（ShinGo-Light）@@hbreak()//zu2{FONTFIG/rpsglr.eps//}	rpsglr	JE1/sgo/l/f
+//tkei
+ShinGo-regular.Roman（ShinGo-regular）@@hbreak()//zu2{FONTFIG/rpsgrr.eps//}	rpsgrr	JE1/sgo/sm/f
+//tkei
+ShinGo-Medium.Roman（ShinGo-Medium）@@hbreak()//zu2{FONTFIG/rpsgmr.eps//}	rpsgmr	JE1/sgo/m/f
+//tkei
+ShinGo-Bold.Roman（ShinGo-Bold）@@hbreak()//zu2{FONTFIG/rpsgbr.eps//}	rpsgbr	JE1/sgo/b/f
+//tkei
+ShinGo-Ultra.Roman（ShinGo-Ultra）@@hbreak()//zu2{FONTFIG/rpsgur.eps//}	rpsglr	JE1/sgo/u/f
+//tkei
+FutoMinA101-Bold.Roman（FutoMinA101-Bold）@@hbreak()//zu2{FONTFIG/rpfmbr.eps//}	rpfmbr	JE1/fmin/b/f
+//tkei
+FutoGoB101-Bold.Roman（FutoGoB101-Bold）@@hbreak()//zu2{FONTFIG/rpfgbr.eps//}	rpfgbr	JE1/fgo/b/f
+//tkei
+MidashiMin-MA31.Roman（MidashiMin-MA31）@@hbreak()//zu2{FONTFIG/rpmm31r.eps//}	rpmm31r	JE1/mmc/m/f
+//tkei
+MidashiGo-MB31.Roman（MidashiGo-MB31）@@hbreak()//zu2{FONTFIG/rpmg31r.eps//}	rpmg31r	JE1/mgo/m/f
+//tkei
+Jun101-Light.Roman（Jun101-Light）@@hbreak()//zu2{FONTFIG/rpjlr.eps//}	rpjlr	JE1/jun/l/f
+//tkei
+Jun34-Medium.Roman（Jun34-Medium）@@hbreak()//zu2{FONTFIG/rpjmr.eps//}	rpjmr	JE1/jun/m/f
+//tkei
+Jun501-Bold.Roman（Jun501-Bold）@@hbreak()//zu2{FONTFIG/rpjbr.eps//}	rpjbr	JE1/jun/b/f
+//bkei
+//}

@@ -1,0 +1,49 @@
+  和文フォントに対するプロポーショナルピッチの従属欧文フォントです。
+
+//table[l(22w)l(5w)]{
+//bkei
+//g{psstedでの名前（和文書体名）//}	//g{TFM名//}	//g{NFSS2形式名//}
+//bkei
+PCTimes-Roman（Ryumin-Light）@@hbreak()//zu2{FONTFIG/rpptmr.eps//}	rpptmr	JE1/rmn/l/n
+//tkei
+PCRR-SE1（Ryumin-regular）@@hbreak()//zu2{FONTFIG/rpprsr.eps//}	rpprsr	JE1/rmn/r/n
+//tkei
+PCRM-SE1（Ryumin-Medium）@@hbreak()//zu2{FONTFIG/rpprsm.eps//}	rpprsm	JE1/rmn/m/n
+//tkei
+PCRB-SE1（Ryumin-Bold）@@hbreak()//zu2{FONTFIG/rpprsb.eps//}	rpprsb	JE1/rmn/b/n
+//tkei
+PCRH-SE1（Ryumin-heavy）@@hbreak()//zu2{FONTFIG/rpprsh.eps//}	rpprsh	JE1/rmn/bx/n
+//tkei
+PCRU-SE1（Ryumin-Ultra）@@hbreak()//zu2{FONTFIG/rpprsu.eps//}	rpprsu	JE1/rmn/u/n
+//tkei
+PCHelvetica（GothicBBB-Medium）@@hbreak()//zu2{FONTFIG/rpphvr.eps//}	rpphvr	JE1/gbbb/m/n
+//tkei
+PCSINGL-SE1（ShinGo-Light）@@hbreak()//zu2{FONTFIG/rppssl.eps//}	rppssl	JE1/sgo/l/n
+//tkei
+PCSINGR-SE1（ShinGo-regular）@@hbreak()//zu2{FONTFIG/rppssr.eps//}	rppssr	JE1/sgo/r/n
+//tkei
+PCSINGM-SE1（ShinGo-Medium）@@hbreak()//zu2{FONTFIG/rppssm.eps//}	rppssm	JE1/sgo/m/n
+//tkei
+PCSINGB-SE1（ShinGo-Bold）@@hbreak()//zu2{FONTFIG/rppssb.eps//}	rppssb	JE1/sgo/b/n
+//tkei
+PCSINGU-SE1（ShinGo-Ultra）@@hbreak()//zu2{FONTFIG/rppssu.eps//}	rppssu	JE1/sgo/u/n
+//tkei
+PCMB101-SE1（GothicMB101-Bold）@@hbreak()//zu2{FONTFIG/rppmbsb.eps//}	rppmbsb	JE1/gmb/b/n
+//tkei
+PCMB101-SE1（GothicMB101-Ult）@@hbreak()//zu2{FONTFIG/rppmbsu.eps//}	rppmbsu	JE1/gmb/u/n
+//tkei
+PCCenturyOldStyle-Regular（FutoMinA101-Bold）@@hbreak()//zu2{FONTFIG/rppcor.eps//}	rppcor	JE1/fmin/b/n
+//tkei
+PCHelveticaNeue-Medium（FutoGoB101-Bold）@@hbreak()//zu2{FONTFIG/rpphnm.eps//}	rpphnm	JE1/fgo/b/n
+//tkei
+PCCentury-Bold（MidashiMin-MA31）@@hbreak()//zu2{FONTFIG/rppcnb.eps//}	rppcnb	JE1/mmc/m/n
+//tkei
+PCHelvetica-Bold（MidashiGo-MB31）@@hbreak()//zu2{FONTFIG/rpphvb.eps//}	rpphvb	JE1/mgo/m/n
+//tkei
+PCJun101-Light（Jun101-Light）@@hbreak()//zu2{FONTFIG/rppjl.eps//}	rppjl	JE1/jun/l/n
+//tkei
+PCJ34-SE1（Jun34-Light）@@hbreak()//zu2{FONTFIG/rppjm.eps//}	rppjm	JE1/jun/m/n
+//tkei
+PCJ501-SE1（Jun501-Bold）@@hbreak()//zu2{FONTFIG/rppjb.eps//}	rppjb	JE1/jun/b/n
+//bkei
+//}

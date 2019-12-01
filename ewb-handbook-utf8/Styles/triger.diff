@@ -1,0 +1,33 @@
+#
+# 直接図を読み込む
+#
+defnoexpand	zu2	"\\scalebox{.4}{\\includegraphics{"	"}}"
+
+#
+# TeX関係ロゴ
+#
+defsimple	TeX	\\TeX{}
+defsimple	pTeX	p\\TeX{}
+defsimple	LATEX	\\LaTeX{}
+defsimple	pLaTeX	p\\LaTeX{}
+defsimple	LaTeXe	\\LaTeXe{}
+defsimple	pLaTeXe	p\\LaTeXe{}
+# 表中の文字を回転
+defgothic	rotate	"\\hbox{\\lower5mm\\vbox{\\rotatebox{60}{"	"}}}"
+#
+# 約物/記号一覧表文字枠
+#
+defgothic	waku	"\\WAKU{"	"}"
+defgothic	twaku	"\\TWAKU{"	"}"
+#
+# 表紙
+#
+defsimple	hyousi	\\hyousi{}
+#
+# リスト書体追加
+#
+defgothic	sl	"{\\sl{}"	"}"
+#
+# 見出し折り返し＆縮小
+#
+defgothic	small	"\\\\{}\\scalebox{.6}{"	}

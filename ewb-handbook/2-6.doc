@@ -1,0 +1,404 @@
+chapter 6
+//i 仕上がりファイルの作成
+
+  レイアウトが無事に終了し、索引作成も行ったら、いよいよ仕上がりファイルの作成です。仕上がりファイルはPostScriptファイルですが、目的に応じて大きく2つの作成方法があります。
+
+//k1{
+・印刷し、製本することを目的とした面付けPostScriptファイル
+・PDF形式へ変換してWEB等での閲覧を目的としたリンク情報付きPostScriptファイル
+//}
+
+  この章では、これらの仕上がりファイルを作成する方法について説明します。
+
+//ii 最終チェック
+
+  どちらの方法でも、仕上がりファイルを作る前の最終チェックが必要です。まずはチェックの方法、確認しておくべき点について説明しておきます。
+
+//iii 全出力
+
+  最終チェックは、最新の出力を使わなければ何の意味もありません。このため、入稿前には、必ずプリンタによる全出力を行います。まずは、この全出力のやり方について説明します。
+  全出力のために、まず今までの出力時に作成された作業用ファイルを、“//in256cln”という命令を使って、すべて消去します。この後に、原稿セットに登録されたすべての原稿を出力する“//in257OUT”という命令を入力します。
+
+//list2{
+% //sl{book//}
+  # Body       Document file          Page Style file           Options
+  1 chap1      chap1.doc               21  -                    useindex tex2
+  2 chap2      chap2.doc              (25) -                    useindex tex2
+  3 chap3      chap3.doc              (29) -                    useindex tex2
+  4 chap4      chap4.doc              (33) -                    useindex tex2
+  5 chap5      chap5.doc              (37) -                    useindex tex2
+  6 chap6      chap6.doc              (41) -                    useindex tex2
+  7 chap7      chap7.doc              (45) -                    useindex tex2
+  8 chap8      chap8.doc              (49) -                    useindex tex2
+  9 chap9      chap9.doc              (53) -                    useindex tex2
+ 10 chap10     chap10.doc             (57) -                    useindex tex2
+ 11 index      ---                    (60) index.cls            tex2
+% //sl{cln//}
+rm -f chap1.aux chap1.idx chap1.log chap1.tex chap1.fpg chap1.lpg chap1.LOG   ..
+/Targets/chap1.Dvi  ../Targets/chap1.PS 
+rm -f chap2.aux chap2.idx chap2.log chap2.tex chap2.fpg chap2.lpg chap2.LOG   ..
+/Targets/chap2.Dvi  ../Targets/chap2.PS 
+rm -f chap3.aux chap3.idx chap3.log chap3.tex chap3.fpg chap3.lpg chap3.LOG   ..
+/Targets/chap3.Dvi  ../Targets/chap3.PS 
+rm -f chap4.aux chap4.idx chap4.log chap4.tex chap4.fpg chap4.lpg chap4.LOG   ..
+/Targets/chap4.Dvi  ../Targets/chap4.PS 
+rm -f chap5.aux chap5.idx chap5.log chap5.tex chap5.fpg chap5.lpg chap5.LOG   ..
+/Targets/chap5.Dvi  ../Targets/chap5.PS 
+rm -f chap6.aux chap6.idx chap6.log chap6.tex chap6.fpg chap6.lpg chap6.LOG   ..
+/Targets/chap6.Dvi  ../Targets/chap6.PS 
+rm -f chap7.aux chap7.idx chap7.log chap7.tex chap7.fpg chap7.lpg chap7.LOG   ..
+/Targets/chap7.Dvi  ../Targets/chap7.PS 
+rm -f chap8.aux chap8.idx chap8.log chap8.tex chap8.fpg chap8.lpg chap8.LOG   ..
+/Targets/chap8.Dvi  ../Targets/chap8.PS 
+rm -f chap9.aux chap9.idx chap9.log chap9.tex chap9.fpg chap9.lpg chap9.LOG   ..
+/Targets/chap9.Dvi  ../Targets/chap9.PS 
+rm -f chap10.aux chap10.idx chap10.log chap10.tex chap10.fpg chap10.lpg chap10.L
+OG   ../Targets/chap10.Dvi  ../Targets/chap10.PS
+rm -f index.aux index.idx index.log index.tex index.fpg index.lpg index.LOG
+rm -f ALL.DVI ../Targets/ALL.*
+% //sl{OUT//}
+debug ' ewb2latex -y -f ../triger.def  -s ../ewb2latex.cls  -P `cat chap1.fpg` -
+T idx.tmp -o chap1.tex ../chap1.doc '
+pl-new chap1.tex && pl-new chap1.tex &&  :
+This is pTeX, Version p2.1.9, based on TeX, Version 3.14159 (EUC) (Web2C 7.3.1)
+(chap1.tex
+pLaTeX2e <1996/03/05>+2 (based on LaTeX2e <1996/06/01> patch level 0)
+(../ewb2latex.cls
+Document Class: ewb2latex 1996/10/31 19:59 Document style for `pssted sample fil
+e'
+*** make dvi for printer ***
+(/usr/local/ewb/3.3/ewbmacros/lib/ewbbase3_3.sty
+(/usr/local/ewb/3.3/ewbmacros/lib/cm/OT1cmr.fd)
+  .........省略
+psp -s-10 -Ppslp2 ../Targets/chap1.PS ../Targets/chap2.PS ../Targets/chap3.PS 
+../Targets/chap4.PS ../Targets/chap5.PS ../Targets/chap6.PS ../Targets/chap7.PS 
+../Targets/chap8.PS ../Targets/chap9.PS ../Targets/chap10.PS 
+%
+//}
+
+@@clearpage()
+  “OUT”という命令による出力は、長時間に渡って、プリンタを占有します。このため、プリンタの利用者が多い時間帯に出力する時には、今まで通り章単位に、少しずつ間をおきながら出力してください。
+
+//iii チェック項目
+
+  プリンタによる全出力が得られたら、チェックをはじめてください。ここでは、いくつかのチェックポイントをあげてみます。もし、少しでも疑問に思うような点があれば、担当の制作者やEWBの管理者に質問しましょう。
+
+//iii ノンブル
+
+  各章のノンブルが台割りと合っているかどうかを確認してください。EWB-Shelfのページ番号設定などをミスしているかもしれません。
+
+//iii ベースライン補正
+
+  和欧文間のベースラインがずれていないかどうかを確認してください。この補正値は、本文や見出し、箇条書などといった各要素ごとに決めるものです。要素によっては、見落としがあるかもしれませんので注意が必要です。
+
+//iii 版面からの飛び出し
+
+  英単語などが、版面から飛び出していないかどうかを確認してください。レイアウト修正の時に見落としているかもしれません。
+
+//iii 索引の読み合わせ
+
+  索引の読み合わせも行ってください。索引トリガの入力位置によっては、索引ページに出力されたページ番号がずれている可能性があります。もし、ずれていた場合は、索引トリガの位置を修正して、もう一度出力してください。
+
+//iii 変な出力はありませんか？
+
+  EWBのプリンタ出力は、「書体と解像度の違いを除いて、フィルム出力と全く同じ」です。もし、罫線や文字の出力位置がずれていれば、フィルムで出力しても同じようにずれてしまいます。おかしな箇所があったら、担当の制作者やEWBの管理者に質問してみましょう。
+
+  以上、ページ出力での組版チェックが終ったら、いよいよ仕上がりファイル作成の作業に入ります。
+
+//ii 面付けPostScriptファイルの作成
+
+  まずは、印刷／製本を前提とした面付けファイルの作成方法を説明します。
+
+//iii 面付けファイル作成の前に
+
+  印刷を前提とした作業の場合、EWBはフィルム出力を最終出力としています。そのため、出力センターに渡す入稿用ファイルはこちらで//in248面付けしたものになります。入稿用ファイルを作成するために、まず面付けの設定をします。面付けの設定は“//in249面付け情報ファイル”に記述します。ファイル名は//in250MENTUKEinfoです。標準的にEWBがインストールされていれば、雛型が“/usr/local/ewb/3.3/MENTUKEinfo”に用意されています。これを作業ディレクトリにコピーして書き換えてしてください。内容は次のようになっています。
+
+//list2{
+# psmentuke用設定ファイル
+
+組方向          横              # 指定項目：縦/横
+折り単位        16              # 指定項目：8/16
+面付け単位      8               # 指定項目：4/8
+無線綴じ        無し    # 指定項目：有り/無し
+タイトル        "sample book(書名例)"   # 書名
+末尾折り補正    有り    # 指定項目：有り/無し
+ファイル分割    折り    # 指定項目：折り/面
+ページモード    絶対ページ  # 指定項目：絶対ページ/ノンブル
+面付けサイズ    トンボサイズ      # 指定項目：A4/B4/A3/B3/A2/B2/A1/B1/
+                                  #           トンボサイズ/指定無し
+//}
+
+//k1{
+//g{//in259組方向//}
+//|本文の組方向を指定します。“縦”、“横”が指定できます。
+//g{//in258折り単位//}
+//|1折りが何ページになるかを指定します。“8”、“16”が指定できます。
+//g{//in260面付け単位//}
+//|1面が何ページ分になるかを指定します。“4”、“8”が指定できます。折り単位に“16”を指定した場合、面付け単位に“8”を指定すると表/裏、“4”を指定すると表左/表右/裏左/に分けて面付けを行います。折り単位に“8”を指定した場合、面付け単位は“4”しか指定できません。
+//g{//in251無線綴じ//}
+//|無線綴じのための断ちしろをとるかどうかを指定します。無線綴じの場合は“有り”、そうでなければ“無し”を指定します。
+//g{タイトル//}
+//|書名を指定します。書名にスペースが入る場合は"で囲んで指定します。
+//g{//in252末尾折り補正//}
+//|最後の折りのページ数が半端になった場合、最後を折り単位で指定したページ数にするかどうかを調整します。
+//|たとえば折り単位を“16”に指定したときに12ページ分半端がでた場合、この12ページは8ページの折りと4ページの折りに分けられます。このとき、末尾折り補正に“無し”を指定すると最後の折りが4ページ、その前の折りが8ページで組まれます。“有り”を指定した場合は、最後に16ページの折りを作り、その前は4ページ、さらにその前に8ページの折りを作ります。つまり、最後の折りは強制的に折り単位で指定したページ数となります。
+//g{//in253ファイル分割//}
+//|面付けしたファイルをどのように分割するかを指定します。“折り”を指定するとファイルは1折りごとに分割されます。“面”を指定するとファイルは面ごとに分割されます。このとき、折り単位が“16”、面付け単位が“4”である場合は、1つの折りが“表左面、表右面、裏左面、裏右面”の4つのファイルとして作成されることになります。それ以外の場合は“表面、裏面”の2つが作成されます。
+//g{//in261ページモード//}
+//|面付けのページの取り方を指定します。“絶対ページ”を指定するとノンブルに関係なく、ページの順番のみに依存した並べ方で組みます。“ノンブル”を指定するとノンブルに合った位置にページを並べます。目次と本文が別ノンブルである場合などは“絶対ページ”を、ページが途中で切れてその部分は白ページにしたい場合などは“ノンブル”を指定してください。
+//g{//in593面付けサイズ//}
+//|面付けしたものを出力するフィルムのサイズを指定します。トンボサイズ（面付けのトンボに合わせる）、A4〜B1、指定無しが選択できます。出力センターによっては指定無しだと出力がおかしくなる（欠けて出力される）場合がありますので、できるだけ“トンボサイズ”を指定してください。
+//}
+
+//iii 面付けファイルの作成
+
+  面付けの準備ができたら入稿用ファイルを作成します。入稿するために必要なファイルは、“ALL.PSファイル”と呼ばれるファイルです。“ALL.PSファイル”は、面付けされたPostScriptファイルです。このファイルは、“//in254ALL.PS”という命令で作成します。では、入力してみます。
+
+//list2{
+% //sl{book//}
+  # Body       Document file          Page Style file           Options
+  1 chap1      chap1.doc               21  -                    useindex tex2
+  2 chap2      chap2.doc              (25) -                    useindex tex2
+  3 chap3      chap3.doc              (29) -                    useindex tex2
+  4 chap4      chap4.doc              (33) -                    useindex tex2
+  5 chap5      chap5.doc              (37) -                    useindex tex2
+  6 chap6      chap6.doc              (41) -                    useindex tex2
+  7 chap7      chap7.doc              (45) -                    useindex tex2
+  8 chap8      chap8.doc              (49) -                    useindex tex2
+  9 chap9      chap9.doc              (53) -                    useindex tex2
+ 10 chap10     chap10.doc             (57) -                    useindex tex2
+ 11 index      --                     (60) index.cls            tex2
+% //sl{ALL.PS//}
+debug ' ewb2latex -y -f ../triger.def  -s ../ewb2latex.cls  -P `cat chap1.fpg` -
+T idx.tmp -o chap1.tex ../chap1.doc '
+pl-new chap1.tex && pl-new chap1.tex &&  :
+This is pTeX, Version p2.1.9, based on TeX, Version 3.14159 (EUC) (Web2C 7.3.1)
+(chap1.tex
+pLaTeX2e <1996/03/05>+2 (based on LaTeX2e <1996/06/01> patch level 0)
+(../ewb2latex.cls
+Document Class: ewb2latex 1996/10/31 19:59 Document style for `pssted sample fil
+e'
+*** make dvi for printer ***
+(/usr/local/ewb/3.3/ewbmacros/lib/ewbbase3_3.sty
+(/usr/local/ewb/3.3/ewbmacros/lib/cm/OT1cmr.fd)
+(/usr/local/ewb/3.3/ewbmacros/lib/cm/OT1cmtt.fd)
+(/usr/local/ewb/3.3/ewbmacros/lib/cm/OMLcmm.fd)
+  .........省略
+Wrote 13 pages, 48936 bytes
+This is dvipsk 5.86 p1.5c Copyright 1996-2000 ASCII Corp.(www-ptex@ascii.co.jp)
+based on dvipsk 5.86 Copyright 1999 Radical Eye Software (www.radicaleye.com)
+' TeX output 1996.12.16:1829' -> psmentuketmp.ps
+dvips: no match for special paper size found; using default
+<texc.pro><cmtt10.pfb><cmmi10.pfb><cmr10.pfb><cmsy10.pfb><texps.pro>
+<special.pro><color.pro>. [49] [50] [51] [52] [53] [54] [55] [56] [57] [58]
+[59] [60] [61] 
+% //sl{ls Targets//}
+ALL.DVI      ALL.PS.003    chap2.DVI       chap6.DVI        index.DVI
+ALL.PS       ALL.PS.004    chap3.DVI       chap7.DVI
+ALL.PS.001   chap1.DVI     chap4.DVI       chap8.DVI
+ALL.PS.002   chap10.DVI    chap5.DVI       chap9.DVI
+%
+//}
+
+  “Targets”というディレクトリに、“ALL.PS.（番号）”というファイルが出来上がります。これが、入稿用のファイル“ALL.PSファイル”です。MENTUKEinfoファイルで“ファイル分割”に“折り”を指定した場合は、拡張子の番号は面付け状態での“折り番号”を表します。“面”を指定した場合、16ページ単位の折りで面付け単位が4ページの場合は1折りから“表左面、表右面、裏左面、裏右面”の順で、それ以外の場合は“表面、裏面”の順で番号が付けられています。
+  さらに、このファイルをプリンタへ出力して面付けの状態をチェックします。“//in255ALL.out”という命令でプリンタ出力します。
+
+//list2{
+% //sl{ALL.out//}
+mamehon ../Targets/ALL.PS.[0-9]*
+Processing ../Targets/ALL.PS.001 ... done.
+Processing ../Targets/ALL.PS.002 ... done.
+Processing ../Targets/ALL.PS.003 ... done.
+Processing ../Targets/ALL.PS.004 ... done.
+%
+//}
+
+  面付けされたものをそのままの大きさで出力するとA3の用紙でも入り切れないので、この出力は縦横がそれぞれ半分の大きさに縮小したものになっています。プリンタから出力されたら面付けの状態をチェックします。ここでのチェックポイントは次のようなものです。
+
+//k1{
+//g{折りとページの関係//}
+//|台割りと見比べながら、折り番号とページの関係が正しいかチェックします。白ページが入るべきところで入っていなかったりするとノンブルが途中で不連続になり、面付けがおかしくなります。
+//g{トンボ、背丁の位置//}
+//|ページの位置に対してトンボ、背丁の位置がおかしくなっていないかチェックします。
+//g{版面からの飛び出し//}
+//|全出力でもチェックしましたが、ここでもチェックします。全出力では版面からはみ出すと見えなくなるだけなので見落としがちですが、面付けしてみると隣のページにかぶっていた、ということがあります。
+//}
+
+  おかしい部分を修正したら面付けし直して再出力して確認します。特定の折りのみ出力するには“ALL.out 番号”というコマンドを使います。
+
+//list2{
+% //sl{ALL.out 3//}
+mamehon 3 ../Targets/ALL.PS
+Processing ../Targets/ALL.PS.003 ... done.
+%
+//}
+
+  この番号は“ALL.PS.番号”の番号と同じです。MENTUKEinfoファイルの“ファイル分割”の指定によって変わってきますので注意してください。
+
+//iii //in262入稿
+
+  これで入稿ファイルはすべてできたわけですが、ファイルを出力センターに渡す前に、使用しているフォントを出力センターが持っているかを確認しておきます。使用フォントの一覧は“//g{//in263fontscan//}”というコマンドで行います。
+
+//list2{
+% //sl{fontscan Targets/ALL.PS.*//}
+Helvetica
+Helvetica-Bold
+Helvetica-Condensed-Light
+Helvetica-Light
+Ryumin-regular-H
+ShinGo-Bold-H
+ShinGo-Light-H
+ShinGo-Medium-H
+Univers-Condensed
+Univers-CondensedBold
+//}
+
+  表示されたフォント一覧を出力センター側に確認してもらい、持っていないフォントがあれば原稿ファイルと一緒にフォントファイルを送ってください。
+  確認ができたら、入稿用ファイルをftp等でローカルマシンにダウンロードし、すべてMOにコピーします。
+  こうしてできたMOを出力センターに送れば入構作業は終了です。
+
+//ii 入稿後の作業
+
+  入稿が終了して、青焼きのチェックを行っていると、時々、ミスを発見してしまいます。ここでは、ページの出し直し作業と将来の増刷りや再版に備えた原稿のバックアップについて解説していきます。
+
+//iii ページの出し直し
+
+  入稿後の青焼きをチェックしていて、もしミスを見つけてしまった場合には、修正を行わなければなりません。EWBでは、ページ単位の出力しかできませんので、1文字単位の修正であればバラ打ちを行い、切り貼りした方が効率アップにつながります。しかし、この場合に原稿ファイルとの整合性がとれなくなってしまいますので、注意が必要です。また、段落単位あるいは節単位で修正がはいってしまった場合には、それ以降のページのレイアウトに影響が出てしまうため、EWBで再度、出力しなければなりません。
+
+//iii 修正と確認
+
+  まずは、これまで説明してきた方法で原稿を修正し、プリンタで確認します。文字が正しく修正されているかどうかの確認をしてください。修正により次のページ以降も変わってしまうことがあるので注意してください。
+
+//iii 修正出力用ファイルの作り方
+
+  出力しなおすページが複数ページに渡る場合、折りごとまたは面ごとに面付けファイルを作成して出力した方がよいでしょう。たとえば、20〜25ページを出し直す場合、2折り目を出し直せば済みます。この場合は、“ALL.PS”コマンドですべての折りを作り直して“ALL.PS.002”を出し直すことになります。1つの面で済む場合はMENTUKEinfoの“ファイル分割”に“面”を指定して同じく“ALL.PS”コマンドで面付けファイルを作り直します。
+  修正が1ページで済んで、フィルムの切り貼りで対処することになると、そのページだけのPostScriptファイルを作る必要があります。そのための手順を説明します。
+  1ページだけのファイルを作成するには、“PS”コマンドを使用します。たとえば“chap3.doc”の32ページ目だけのファイルを作りたい場合、“chap3.PS 32”と入力します。
+
+//list2{
+% //sl{cln//}
+% //sl{PS//}
+% //sl{chap3.cln//}
+% //sl{chap3.PS 32//}
+% //sl{ls Targets//}
+chap3.Dvi       chap3.PS.cut
+%
+//}
+
+  できた“chap3.PS.cut”が指定のページを抜き出したPostScriptファイルです。このコマンドで連続したページも抜き出せます。20ページから25ページの場合には、“-”を使って、“20-25”のように指定します。
+  こうしてできたファイルをフロッピーディスクまたはMOで入稿すれば完了です。
+
+//ii PDF用PostScriptファイルの作成
+
+  最近、文書をPDF形式にしてWEBサイトで閲覧できるようにするという方法が広く利用されています。EWBの出力はPostScriptなのでアドビ社のAcrobat Distillerを使用してPDFの文書へ変換することが可能です。
+
+//iii //in534しおり情報ファイルの作成
+
+  PDFファイルには、任意のページに「しおり」が付けられます。EWBでしおりを付けるには、「//in537しおり情報ファイル」が必要です。しおり情報ファイルは//in535mksioriコマンドで作成します。
+
+//list2{
+% mksiori
+//}
+
+  これで文中の見出しのしおり情報が//in536siori.datというファイルに作成されます。
+
+//iii //in538PDF情報ファイルの作成
+
+  PDFファイル中には著作者、タイトルといった情報が埋め込まれます。そのための設定ファイルとして//in539PDFinfoというファイルです。
+  PDFinfoファイルは以下のような中身のテキストファイルで、雛型として/usr/local/ewb/3.3/PDFinfoが用意されています。
+
+//list2{
+<general>
+author = "EWBコンソーシアム"  # 著作者名
+title = "EWBハンドブック"     # タイトル
+subject = "バージョン3.3"     # サブタイトル
+pagemode = 2                  # PDFを開いたときの閲覧方法
+</general>
+//}
+
+  このうち、pagemodeはAcrobat Reader等でPDFファイルを開いた時の最初の表示方法で、しおりやサムネールを文書本体と一緒に表示するかどうかの設定です。
+pagemodeの番号は以下のようになっています。
+
+//k1{
+1//|しおり/サムネールを表示しない
+2//|しおりを表示する
+3//|サムネールを表示する
+4//|文書本体をフルスクリーンモードで表示する
+//}
+
+  これらの情報をPDFinfoというファイルに記述しておきます。
+
+//iii PostScriptファイルの作成
+
+  以上のファイルが用意できたら、PSファイルを作成します。作成コマンドはALL.PDFです。
+
+//list2{
+% ALL.PDF
+debug ' ewb2latex -y -f ../triger.def  -s ../ewb2latex.cls  -P `cat chap1.fpg` -
+T idx.tmp -o chap1.tex ../chap1.doc '
+pl-new chap1.tex && pl-new chap1.tex &&  :
+This is pTeX, Version p2.1.9, based on TeX, Version 3.14159 (EUC) (Web2C 7.3.1)
+(chap1.tex
+pLaTeX2e <1996/03/05>+2 (based on LaTeX2e <1996/06/01> patch level 0)
+(../ewb2latex.cls
+Document Class: ewb2latex 1996/10/31 19:59 Document style for `pssted sample fil
+e'
+*** make dvi for printer ***
+(/usr/local/ewb/3.3/ewbmacros/lib/ewbbase3_3.sty
+(/usr/local/ewb/3.3/ewbmacros/lib/cm/OT1cmr.fd)
+(/usr/local/ewb/3.3/ewbmacros/lib/cm/OT1cmtt.fd)
+(/usr/local/ewb/3.3/ewbmacros/lib/cm/OMLcmm.fd)
+  .........省略
+/usr/local/ewb/3.3/bin/dviconcat -o ALL.DVi ../Targets/pre.DVi ../Targets/conten
+ts.DVi ../Targets/1-1.DVi ../Targets/index.DVi ../Targets/test.DVi
+Wrote 20 pages, 52920 bytes
+/usr/local/ewb/3.3/bin/dvips -N0 -mode supre -D2400 -M -z -o tmp.ps ALL.DVi
+This is dvipsk 5.86 p1.5c Copyright 1996-2000 ASCII Corp.(www-ptex@ascii.co.jp)
+based on dvipsk 5.86 Copyright 1999 Radical Eye Software (www.radicaleye.com)
+' TeX output 2000.12.19:1240' -> tmp.ps
+/usr/local/ewb/3.3/bin/dvips: no match for special paper size found; using defau
+lt
+<texc.pro><texps.pro><special.pro><color.pro><hps.pro>. <cmsy10.pfb>
+<cmtt10.pfb><Cmtt10-Bold.pfb><cmtt9.pfb>[1<FIG/ewbhandbook.eps>] [2] [3] [4] 
+[5] [6] [7] [8] [9] [10<FIG/f010101.eps>] [11] [12] [13<FIG/f010102.eps>] 
+[14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28]
+[29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43]
+[44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58]
+[59] [60] [61] <head.tmp><body.tmp>
+/usr/local/ewb/3.3/bin/settopdf -n -i ../PDFinfo -t ../siori.dat -s ../PDFstyle 
+-o PDF.PS tmp.ps
+mv PDF.PS ../Targets
+Targets ディレクトリに PDF.PS を作成しました
+% //sl{ls Targets//}
+ALL.DVi       chap10.DVI      chap4.DVI       chap6.DVi        chap9.DVI
+PDF.PS        chap2.DVi       chap4.DVi       chap7.DVI        chap9.DVi
+chap1.DVI     chap2.DVI       chap5.DVI       chap7.DVi        index.DVI
+chap1.DVi     chap3.DVi       chap5.DVi       chap8.DVI        index.DVi
+chap10.DVI    chap3.DVI       chap6.DVI       chap8.DVi
+//}
+
+  これですべてのEWBファイルをコンパイルし、リンク情報の入ったPSファイルが Targetsディレクトリに PDF.PS という名前で作成されます。
+  なお、直接PDF形式のファイルが作られるわけではないのでご注意ください。PDF形式への変換にはAdobe Acrobat等の変換プログラムが必要です。
+
+//ii 原稿の//in264バックアップ
+
+  EWBはPostScriptファイルを生成するため膨大なディスクスペースを消費します。そのため、すべての作業が終了したらEWBマシンのディスクスペース節約のために作業に使用したファイルを消去します。その前に将来の増刷りや再版時に備えて原稿のバックアップを行ってください。この作業を怠って、原稿を失ってしまっては、電子化の苦労が無駄になってしまいます。自分のファイルは、自分で管理するようにしましょう。
+
+//iii バックアップするファイル
+
+  バックアップしなければならないファイルは、次にあげるものです。
+
+//k1{
+・トリガ入りの原稿ファイル
+・読み込んでいる図表ファイル
+・物理属性ファイル
+・索引ファイル
+・スタイルファイル
+・トリガ定義ファイル
+・面付け情報ファイル
+・PDFスタイルファイル
+・PDF情報ファイル
+//}
+
+  その他のファイルは、EWBが中間的に生成するファイルなので、バックアップの必要はありません。バックアップの前に不必要なファイルを、“cln”命令で消しましょう。
+  これらのファイルをMO等に保存してバックアップ終了です。

@@ -1,0 +1,108 @@
+Chapter 5
+//ai //in477約物／//in478記号類一覧表
+  //label{yakumonokigou//}
+  約物/記号は全角で入力するか半角で入力するかで、その出力が大きく違ってきます。次に約物/記号一覧表を示します。
+
+//table3[|l(13w)c(3w)|c(4w)|c(4w)|c(4w)|c(4w)|]{
+//bkei
+//g{約物／記号//}	　	//g{全角横組//}	//g{全角縦組//}	//g{半角横組//}	//g{半角縦組//}
+//ckei
+句点	、	//waku{、//}	//twaku{、//}	×	×
+//tkei
+読点	。	//waku{。//}	//twaku{。//}	×	×
+//tkei
+カンマ	，	//waku{，//}	//twaku{，//}	//waku{,//}	//twaku{,//}
+//tkei
+ピリオド	．	//waku{．//}	//twaku{．//}	//waku{.//}	//twaku{.//}
+//tkei
+波型	～	//waku{～//}	//twaku{～//}	//waku{~//}	//twaku{~//}
+//tkei
+3点リーダ	…	//waku{…//}	//twaku{…//}	×	×
+//tkei
+2点リーダ	‥	//waku{‥//}	//twaku{‥//}	×	×
+//tkei
+パーレン	（	//waku{（//}	//twaku{（//}	//waku{(//}	//twaku{(//}
+//tkei
+カギカッコ	「	//waku{「//}	//twaku{「//}	×	×
+//tkei
+ギュメ	〈	//waku{〈//}	//twaku{〈//}	×	×
+//tkei
+2連ギュメ	《	//waku{《//}	//twaku{《//}	×	×
+//tkei
+キッコー	〔	//waku{〔//}	//twaku{〔//}	//waku{[//}	//twaku{[//}
+//tkei
+波カッコ	｛	//waku{｛//}	//twaku{｛//}	//waku{{//}	//twaku{{//}
+//tkei
+コロン	：	//waku{：//}	//twaku{：//}	//waku{://}	//twaku{://}
+//tkei
+セミコロン	；	//waku{；//}	//twaku{；//}	//waku{;//}	//twaku{;//}
+//tkei
+シングルクォーテーション	‘	//waku{‘//}	//twaku{‘//}	//waku{`//}	//twaku{`//}
+//tkei
+ダブルクォーテーション	“	//waku{“//}	//twaku{“//}	//waku{"//}	//twaku{"//}
+//tkei
+@@clearpage()
+//tkei
+円マーク	￥	//waku{￥//}	//twaku{￥//}	×	×
+//tkei
+スラッシュ	／	//waku{／//}	//twaku{／//}	//waku{///}	//twaku{///}
+//tkei
+バックスラッシュ	＼	//waku{＼//}	//twaku{＼//}	//waku{\//}	//twaku{\//}
+//tkei
+感嘆符	！	//waku{！//}	//twaku{！//}	//waku{!//}	//twaku{!//}
+//tkei
+疑問符	？	//waku{？//}	//twaku{？//}	//waku{?//}	//twaku{?//}
+//tkei
+アンダーバー	＿	//waku{＿//}	//twaku{＿//}	//waku{_//}	//twaku{_//}
+//tkei
+プラス	＋	//waku{＋//}	//twaku{＋//}	//waku{+//}	//twaku{+//}
+//tkei
+マイナス	－	//waku{－//}	//twaku{－//}	//waku{-//}	//twaku{-//}
+//tkei
+アスタリスク	＊	//waku{＊//}	//twaku{＊//}	//waku{*//}	//twaku{*//}
+//tkei
+除算記号	÷	//waku{÷//}	//twaku{÷//}	×	×
+//tkei
+等号	＝	//waku{＝//}	//twaku{＝//}	//waku{=//}	//twaku{=//}
+//tkei
+正負符号	±	//waku{±//}	//twaku{±//}	×	×
+//tkei
+左不等号	＜	//waku{＜//}	//twaku{＜//}	//waku{<//}	//twaku{<//}
+//tkei
+右不等号	＞	//waku{＞//}	//twaku{＞//}	//waku{>//}	//twaku{>//}
+//tkei
+単価記号	＠	//waku{＠//}	//twaku{＠//}	//waku{@//}	//twaku{@//}
+//tkei
+アンパサンド	＆	//waku{＆//}	//twaku{＆//}	//waku{&//}	//twaku{&//}
+//tkei
+パーセント記号	％	//waku{％//}	//twaku{％//}	//waku{%//}	//twaku{%//}
+//tkei
+番号記号	＃	//waku{＃//}	//twaku{＃//}	//waku{#//}	//twaku{#//}
+//tkei
+ドル記号	＄	//waku{＄//}	//twaku{＄//}	//waku{$//}	//twaku{$//}
+//tkei
+白丸	○	//waku{○//}	//twaku{○//}	×	×
+//tkei
+黒丸	●	//waku{●//}	//twaku{●//}	×	×
+//tkei
+白四角	□	//waku{□//}	//twaku{□//}	×	×
+//tkei
+黒四角	■	//waku{■//}	//twaku{■//}	×	×
+//tkei
+上向き白三角	△	//waku{△//}	//twaku{△//}	×	×
+//tkei
+上向き黒三角	▲	//waku{▲//}	//twaku{▲//}	×	×
+//tkei
+下向き白三角	▽	//waku{▽//}	//twaku{▽//}	×	×
+//tkei
+下向き黒三角	▲	//waku{▲//}	//twaku{▲//}	×	×
+//tkei
+白ひし形	◇	//waku{◇//}	//twaku{◇//}	×	×
+//tkei
+黒ひし形	◆	//waku{◆//}	//twaku{◆//}	×	×
+//tkei
+白星型	☆	//waku{☆//}	//twaku{☆//}	×	×
+//tkei
+黒星型	★	//waku{★//}	//twaku{★//}	×	×
+//bkei
+//}

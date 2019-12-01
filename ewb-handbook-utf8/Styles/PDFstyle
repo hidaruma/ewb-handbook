@@ -1,0 +1,31 @@
+#
+#
+# PDFstyle --- リンクの枠線の定義
+# for EWBハンドブック
+#
+#
+# 枠線色
+#
+# red	RGB指定の赤成分(0.00～1.00)
+# green	RGB指定の緑成分(0.00～1.00)
+# blue	RGB指定の青成分(0.00～1.00)
+#
+#
+# 枠線スタイル
+#
+# width	線幅(pt)
+# dotted	破線(true)/実線(false)
+#
+# dotted=trueの場合
+# dottedlength	破線の長さ(pt)
+# dottedspace	破線の間隔(pt)
+#
+<border>
+red=0.00
+green=0.00
+blue=1.00
+width=0.00
+dotted=true
+dottedlength=3.00
+dottedspace=3.00
+</border>

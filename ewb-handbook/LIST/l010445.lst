@@ -1,0 +1,18 @@
+//list4{
+/* 英数文字列を返す */
+char *read_token(str)
+char *str;
+{
+  char *s;
+  static char buf[MAX];          //cmt{静的なバッファ//}
+
+  if (isalpha(*str)) {           //cmt{英文字だったら//}
+    for (s = str + 1 ; *s && isalnum(*s) ; s++)
+      ;
+    strncpy(buf, str, s - str);
+    buf[s - str] = '\0';         //cmt{円マークになっている//}
+    return buf;
+  } else                         //cmt{その他の場合はNULLを返す//}
+    return NULL;
+}
+//}

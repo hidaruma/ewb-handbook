@@ -1,0 +1,261 @@
+//table[l(15w)l(5w)l]{
+//bkei
+//g{pssted書体名//}	//g{TFM名//}	//g{NFSS2形式名//}
+//bkei
+AvantGarde-ExtraLight@@hbreak()//zu2{FONTFIG/rpagi.eps//}	rpagi	OT1/pag/l/n
+//tkei
+AvantGarde-ExtraLightObl@@hbreak()//zu2{FONTFIG/rpagio.eps//}	rpagio	OT1/pag/l/sl
+//tkei
+AvantGarde-Book@@hbreak()//zu2{FONTFIG/rpagk.eps//}	rpagk	OT1/pag/sm/n
+//tkei
+AvantGarde-BookOblique@@hbreak()//zu2{FONTFIG/rpagko.eps//}	rpagko	OT1/pag/sm/sl
+//tkei
+AvantGarde-Medium@@hbreak()//zu2{FONTFIG/rpagm.eps//}	rpagm	OT1/pag/m/n
+//tkei
+AvantGarde-MediumObl@@hbreak()//zu2{FONTFIG/rpagmo.eps//}	rpagmo	OT1/pag/m/sl
+//tkei
+AvantGarde-Demi@@hbreak()//zu2{FONTFIG/rpagd.eps//}	rpagd	OT1/pag/sb/n
+//tkei
+AvantGarde-DemiOblique@@hbreak()//zu2{FONTFIG/rpagdo.eps//}	rpagdo	OT1/pag/sb/sl
+//tkei
+AvantGarde-Bold@@hbreak()//zu2{FONTFIG/rpagb.eps//}	rpagb	OT1/pag/b/n
+//tkei
+AvantGarde-BoldObl@@hbreak()//zu2{FONTFIG/rpagbo.eps//}	rpagbo	OT1/pag/b/sl
+//tkei
+Bodoni-Book@@hbreak()//zu2{FONTFIG/rpbdk.eps//}	rpbdk	OT1/pbd/sm/n
+//tkei
+Bodoni-BookItalic@@hbreak()//zu2{FONTFIG/rpbdki.eps//}	rpbdki	OT1/pbd/sm/it
+//tkei
+Bodoni@@hbreak()//zu2{FONTFIG/rpbdr.eps//}	rpbdr	OT1/pbd/m/n
+//tkei
+Bodoni-Bold@@hbreak()//zu2{FONTFIG/rpbdb.eps//}	rpbdb	OT1/pbd/b/n
+//tkei
+Bodoni-BoldCondensed@@hbreak()//zu2{FONTFIG/rpbdbrc.eps//}	rpbdbrc	OT1/pbd/b/c
+//tkei
+Bodoni-BoldItalic@@hbreak()//zu2{FONTFIG/rpbdbi.eps//}	rpbdbi	OT1/pbd/b/it
+//tkei
+Bodoni-Poster@@hbreak()//zu2{FONTFIG/rpbdp.eps//}	rpbdp	OT1/pbd/u/n
+//tkei
+Bodoni-PosterCompressed@@hbreak()//zu2{FONTFIG/rpbdprp.eps//}	rpbdprp	OT1/pbd/u/c
+//tkei
+Bodoni-PosterItalic@@hbreak()//zu2{FONTFIG/rpbdpi.eps//}	rpbdpi	OT1/pbd/u/it
+//tkei
+Bookman-Light@@hbreak()//zu2{FONTFIG/rpbkl.eps//}	rpbkl	OT1/pbk/l/n
+//tkei
+Bookman-LightItalic@@hbreak()//zu2{FONTFIG/rpbkli.eps//}	rpbkli	OT1/pbk/l/it
+//tkei
+Bookman-Demi@@hbreak()//zu2{FONTFIG/rpbkd.eps//}	rpbkd	OT1/pbk/sb/n
+//tkei
+Bookman-DemiItalic@@hbreak()//zu2{FONTFIG/rpbkdi.eps//}	rpbkdi	OT1/pbk/sb/it
+//tkei
+BrushScript@@hbreak()//zu2{FONTFIG/rpbsr.eps//}	rpbsr	OT1/pbs/m/n
+//tkei
+Courier@@hbreak()//zu2{FONTFIG/rpcrr.eps//}	rpcrr	OT1/pcr/m/n
+//tkei
+Courier-Oblique@@hbreak()//zu2{FONTFIG/rpcrro.eps//}	rpcrro	OT1/pcr/m/sl
+//tkei
+Courier-Bold@@hbreak()//zu2{FONTFIG/rpcrb.eps//}	rpcrb	OT1/pcr/b/n
+//tkei
+Courier-BoldOblique@@hbreak()//zu2{FONTFIG/rpcrbo.eps//}	rpcrbo	OT1/pcr/b/sl
+//tkei
+Futura-Light@@hbreak()//zu2{FONTFIG/rpful.eps//}	rpful	OT1/pfu/l/n
+//tkei
+Futura-LightOblique@@hbreak()//zu2{FONTFIG/rpfulo.eps//}	rpfulo	OT1/pfu/l/sl
+//tkei
+Futura-CondensedLight@@hbreak()//zu2{FONTFIG/rpfulrc.eps//}	rpfulrc	OT1/pfu/l/c
+//tkei
+Futura-CondensedLightOblique@@hbreak()//zu2{FONTFIG/rpfuloc.eps//}	rpfuloc	OT1/pfu/l/slc
+//tkei
+Futura-Book@@hbreak()//zu2{FONTFIG/rpfuk.eps//}	rpfuk	OT1/pfu/sm/n
+//tkei
+Futura-BookOblique@@hbreak()//zu2{FONTFIG/rpfuko.eps//}	rpfuko	OT1/pfu/sm/sl
+//tkei
+Futura@@hbreak()//zu2{FONTFIG/rpfur.eps//}	rpfur	OT1/pfu/m/n
+//tkei
+Futura-Oblique@@hbreak()//zu2{FONTFIG/rpfuro.eps//}	rpfuro	OT1/pfu/m/sl
+//tkei
+Futura-Condensed@@hbreak()//zu2{FONTFIG/rpfurrc.eps//}	rpfurrc	OT1/pfu/m/c
+//tkei
+Futura-CondensedOblique@@hbreak()//zu2{FONTFIG/rpfuroc.eps//}	rpfuroc	OT1/pfu/m/slc
+//tkei
+Futura-Bold@@hbreak()//zu2{FONTFIG/rpfub.eps//}	rpfub	OT1/pfu/b/n
+//tkei
+Futura-BoldOblique@@hbreak()//zu2{FONTFIG/rpfubo.eps//}	rpfubo	OT1/pfu/b/sl
+//tkei
+Futura-CondensedBold@@hbreak()//zu2{FONTFIG/rpfubrc.eps//}	rpfubrc	OT1/pfu/b/c
+//tkei
+Futura-CondensedBoldOblique@@hbreak()//zu2{FONTFIG/rpfuboc.eps//}	rpfuboc	OT1/pfu/b/slc
+//tkei
+Futura-Heavy@@hbreak()//zu2{FONTFIG/rpfuh.eps//}	rpfuh	OT1/pfu/sb/n
+//tkei
+Futura-HeavyOblique@@hbreak()//zu2{FONTFIG/rpfuho.eps//}	rpfuho	OT1/pfu/sb/sl
+//tkei
+Futura-ExtraBold@@hbreak()//zu2{FONTFIG/rpfux.eps//}	rpfux	OT1/pfu/ex/n
+//tkei
+Futura-ExtraBoldOblique@@hbreak()//zu2{FONTFIG/rpfuxo.eps//}	rpfuxo	OT1/pfu/ex/sl
+//tkei
+Futura-CondensedExtraBold@@hbreak()//zu2{FONTFIG/rpfuxrc.eps//}	rpfuxrc	OT1/pfu/ex/c
+//tkei
+Futura-CondExtraBoldObl@@hbreak()//zu2{FONTFIG/rpfuxoc.eps//}	rpfuxoc	OT1/pfu/ex/slc
+//tkei
+Garamond-Light@@hbreak()//zu2{FONTFIG/rpgml.eps//}	rpgml	OT1/pgm/l/n
+//tkei
+Garamond-LightItalic@@hbreak()//zu2{FONTFIG/rpgmli.eps//}	rpgmli	OT1/pgm/l/it
+//tkei
+GaramondThree@@hbreak()//zu2{FONTFIG/rpg3r.eps//}	rpg3r	OT1/pgm/m/n
+//tkei
+GaramondThree-Italic@@hbreak()//zu2{FONTFIG/rpg3ri.eps//}	rpg3ri	OT1/pgm/m/it
+//tkei
+GaramondThree-Bold@@hbreak()//zu2{FONTFIG/rpg3b.eps//}	rpg3b	OT1/pgm/sb/n
+//tkei
+GaramondThree-BoldItalic@@hbreak()//zu2{FONTFIG/rpg3bi.eps//}	rpg3bi	OT1/pgm/sb/it
+//tkei
+Garamond-Bold@@hbreak()//zu2{FONTFIG/rpgmb.eps//}	rpgmb	OT1/pgm/b/n
+//tkei
+Garamond-BoldItalic@@hbreak()//zu2{FONTFIG/rpgmbi.eps//}	rpgmbi	OT1/pgm/b/it
+//tkei
+Helvetica-Light@@hbreak()//zu2{FONTFIG/rphvl.eps//}	rphvl	OT1/phv/l/n
+//tkei
+Helvetica-LightOblique@@hbreak()//zu2{FONTFIG/rphvlo.eps//}	rphvlo	OT1/phv/l/sl
+//tkei
+Helvetica-Condensed-Light@@hbreak()//zu2{FONTFIG/rphvlrc.eps//}	rphvlrc	OT1/phv/l/c
+//tkei
+Helvetica-Condensed-LightObl@@hbreak()//zu2{FONTFIG/rphvloc.eps//}	rphvloc	OT1/phv/l/slc
+//tkei
+Helvetica@@hbreak()//zu2{FONTFIG/rphvr.eps//}	rphvr	OT1/phv/m/n
+//tkei
+Helvetica-Oblique@@hbreak()//zu2{FONTFIG/rphvro.eps//}	rphvro	OT1/phv/m/sl
+//tkei
+Helvetica-Condensed@@hbreak()//zu2{FONTFIG/rphvrrc.eps//}	rphvrrc	OT1/phv/m/c
+//tkei
+Helvetica-Condensed-Oblique@@hbreak()//zu2{FONTFIG/rphvroc.eps//}	rphvroc	OT1/phv/m/slc
+//tkei
+Helvetica-Narrow@@hbreak()//zu2{FONTFIG/rphvrrn.eps//}	rphvrrn	OT1/phv/m/d
+//tkei
+Helvetica-Narrow-Oblique@@hbreak()//zu2{FONTFIG/rphvron.eps//}	rphvron	OT1/phv/m/sld
+//tkei
+Helvetica-Compressed@@hbreak()//zu2{FONTFIG/rphvbrp.eps//}	rphvbrp	OT1/phv/m/cx
+//tkei
+Helvetica-Bold@@hbreak()//zu2{FONTFIG/rphvb.eps//}	rphvb	OT1/phv/b/n
+//tkei
+Helvetica-BoldOblique@@hbreak()//zu2{FONTFIG/rphvbo.eps//}	rphvbo	OT1/phv/b/sl
+//tkei
+Helvetica-Condensed-Bold@@hbreak()//zu2{FONTFIG/rphvbrc.eps//}	rphvbrc	OT1/phv/b/c
+//tkei
+Helvetica-Condensed-BoldObl@@hbreak()//zu2{FONTFIG/rphvboc.eps//}	rphvboc	OT1/phv/b/slc
+//tkei
+Helvetica-Narrow-Bold@@hbreak()//zu2{FONTFIG/rphvbrn.eps//}	rphvbrn	OT1/phv/b/d
+//tkei
+Helvetica-Narrow-BoldOblique@@hbreak()//zu2{FONTFIG/rphvbon.eps//}	rphvbon	OT1/phv/b/sld
+//tkei
+Helvetica-Black@@hbreak()//zu2{FONTFIG/rphvrc.eps//}	rphvrc	OT1/phv/bx/n
+//tkei
+Helvetica-BlackOblique@@hbreak()//zu2{FONTFIG/rphvco.eps//}	rphvco	OT1/phv/bx/sl
+//tkei
+Helvetica-Condensed-Black@@hbreak()//zu2{FONTFIG/rphvcrc.eps//}	rphvcrc	OT1/phv/bx/c
+//tkei
+Helvetica-Condensed-BlackObl@@hbreak()//zu2{FONTFIG/rphvcoc.eps//}	rphvcoc	OT1/phv/bx/slc
+//tkei
+ItcKabel-Book@@hbreak()//zu2{FONTFIG/rpikk.eps//}	rpikk	OT1/pik/sm/n
+//tkei
+ItcKabel-Medium@@hbreak()//zu2{FONTFIG/rpikm.eps//}	rpikm	OT1/pik/m/n
+//tkei
+ItcKabel-Demi@@hbreak()//zu2{FONTFIG/rpikd.eps//}	rpikd	OT1/pik/sb/n
+//tkei
+ItcKabel-Bold@@hbreak()//zu2{FONTFIG/rpikb.eps//}	rpikb	OT1/pik/b/n
+//tkei
+ItcKabel-Ultra@@hbreak()//zu2{FONTFIG/rpiku.eps//}	rpiku	OT1/pik/u/n
+//tkei
+NewCenturySchlbk-Roman@@hbreak()//zu2{FONTFIG/rpncr.eps//}	rpncr	OT1/pnc/m/n
+//tkei
+NewCenturySchlbk-Italic@@hbreak()//zu2{FONTFIG/rpncri.eps//}	rpncri	OT1/pnc/m/it
+//tkei
+NewCenturySchlbk-Bold@@hbreak()//zu2{FONTFIG/rpncb.eps//}	rpncb	OT1/pnc/b/n
+//tkei
+NewCenturySchlbk-BoldItalic@@hbreak()//zu2{FONTFIG/rpncbi.eps//}	rpncbi	OT1/pnc/b/it
+//tkei
+Optima@@hbreak()//zu2{FONTFIG/rpopr.eps//}	rpopr	OT1/pop/m/n
+//tkei
+Optima-Oblique@@hbreak()//zu2{FONTFIG/rpopro.eps//}	rpopro	OT1/pop/m/sl
+//tkei
+Optima-Bold@@hbreak()//zu2{FONTFIG/rpopb.eps//}	rpopb	OT1/pop/b/n
+//tkei
+Optima-BoldOblique@@hbreak()//zu2{FONTFIG/rpopbo.eps//}	rpopbo	OT1/pop/b/sl
+//tkei
+Palatino-Roman@@hbreak()//zu2{FONTFIG/rpplr.eps//}	rpplr	OT1/ppl/m/n
+//tkei
+Palatino-RomanExtended@@hbreak()//zu2{FONTFIG/rpplrre.eps//}	rpplrre	OT1/ppl/m/x
+//tkei
+Palatino-Italic@@hbreak()//zu2{FONTFIG/rpplri.eps//}	rpplri	OT1/ppl/m/it
+//tkei
+Palatino-Oblique@@hbreak()//zu2{FONTFIG/rpplro.eps//}	rpplro	OT1/ppl/m/sl
+//tkei
+Palatino-Bold@@hbreak()//zu2{FONTFIG/rpplb.eps//}	rpplb	OT1/ppl/b/n
+//tkei
+Palatino-BoldItalic@@hbreak()//zu2{FONTFIG/rpplbi.eps//}	rpplbi	OT1/ppl/b/it
+//tkei
+RmAlpha@@hbreak()//zu2{FONTFIG/rprmalp.eps//}	rprmalp	OT1/prm/m/n
+//tkei
+Times-Roman@@hbreak()//zu2{FONTFIG/rptmr.eps//}	rptmr	OT1/ptm/m/n
+//tkei
+Times-RomanOblique@@hbreak()//zu2{FONTFIG/rptmro.eps//}	rptmro	OT1/ptm/m/sl
+//tkei
+Times-RomanCondensed@@hbreak()//zu2{FONTFIG/rptmrrn.eps//}	rptmrrn	OT1/ptm/m/c
+//tkei
+Times-RomanExtended@@hbreak()//zu2{FONTFIG/rptmrre.eps//}	rptmrre	OT1/ptm/m/x
+//tkei
+Times-Italic@@hbreak()//zu2{FONTFIG/rptmri.eps//}	rptmri	OT1/ptm/m/it
+//tkei
+Times-Bold@@hbreak()//zu2{FONTFIG/rptmb.eps//}	rptmb	OT1/ptm/b/n
+//tkei
+Times-BoldItalic@@hbreak()//zu2{FONTFIG/rptmbi.eps//}	rptmbi	OT1/ptm/b/it
+//tkei
+Times-BoldOblique@@hbreak()//zu2{FONTFIG/rptmbo.eps//}	rptmbo	OT1/ptm/b/sl
+//tkei
+Univers-Light@@hbreak()//zu2{FONTFIG/rpunl.eps//}	rpunl	OT1/pun/l/n
+//tkei
+Univers-LightOblique@@hbreak()//zu2{FONTFIG/rpunlo.eps//}	rpunlo	OT1/pun/l/sl
+//tkei
+Univers-CondensedLight@@hbreak()//zu2{FONTFIG/rpunlrc.eps//}	rpunlrc	OT1/pun/l/c
+//tkei
+Univers-CondensedLightOblique@@hbreak()//zu2{FONTFIG/rpunloc.eps//}	rpunloc	OT1/pun/l/slc
+//tkei
+Univers@@hbreak()//zu2{FONTFIG/rpunr.eps//}	rpunr	OT1/pun/m/n
+//tkei
+Univers-Oblique@@hbreak()//zu2{FONTFIG/rpunro.eps//}	rpunro	OT1/pun/m/sl
+//tkei
+Univers-Condensed@@hbreak()//zu2{FONTFIG/rpunrrc.eps//}	rpunrrc	OT1/pun/m/c
+//tkei
+Univers-CondensedOblique@@hbreak()//zu2{FONTFIG/rpunroc.eps//}	rpunroc	OT1/pun/m/slc
+//tkei
+Univers-Black@@hbreak()//zu2{FONTFIG/rpunc.eps//}	rpunc	OT1/pun/sm/n
+//tkei
+Univers-BlackOblique@@hbreak()//zu2{FONTFIG/rpunco.eps//}	rpunco	OT1/pun/sm/sl
+//tkei
+Univers-Bold@@hbreak()//zu2{FONTFIG/rpunb.eps//}	rpunb	OT1/pun/b/n
+//tkei
+Univers-BoldOblique@@hbreak()//zu2{FONTFIG/rpunbo.eps//}	rpunbo	OT1/pun/b/sl
+//tkei
+Univers-CondensedBold@@hbreak()//zu2{FONTFIG/rpunbrc.eps//}	rpunbrc	OT1/pun/b/c
+//tkei
+Univers-CondensedBoldOblique@@hbreak()//zu2{FONTFIG/rpunboc.eps//}	rpunboc	OT1/pun/b/slc
+//tkei
+ZapfChancery-MediumItalic@@hbreak()//zu2{FONTFIG/rpzcmi.eps//}	rpzcmi	OT1/pzc/m/n
+//tkei
+Symbol@@hbreak()//zu2{FONTFIG/rpsyr.eps//}	rpsyr	U/psy/m/n
+//tkei
+PifontSym@@hbreak()//zu2{FONTFIG/rppfsym.eps//}	rppfsym	U/psy/m/sym
+//tkei
+PifontUt1@@hbreak()//zu2{FONTFIG/rppfut1.eps//}	rppfut1	U/psy/m/ut1
+//tkei
+PifontWk1@@hbreak()//zu2{FONTFIG/rppfwk1.eps//}	rppfwk1	U/psy/m/wk1
+//tkei
+Key-IBM@@hbreak()//zu2{FONTFIG/rpkibm.eps//}	rpkibm	U/psy/m/ibm
+//tkei
+Key-MAC@@hbreak()//zu2{FONTFIG/rpkmac.eps//}	rpkmac	U/psy/m/mac
+//tkei
+ZapfDingbats@@hbreak()//zu2{FONTFIG/rpzdr.eps//}	rpzdr	U/psy/m/zap
+//tkei
+WoodtypeOrnaments-Two@@hbreak()//zu2{FONTFIG/rpwotr.eps//}	rpwotr	U/psy/m/wod
+//bkei
+//}

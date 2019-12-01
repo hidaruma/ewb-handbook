@@ -1,0 +1,235 @@
+#
+#
+# triger.def --- Triger definition file
+# for EWB¥Ï¥ó¥É¥Ö¥Ã¥¯
+# style file Styles/ewb2latex.cls
+#
+#
+
+#
+# defstr --- define string
+#
+defstr	$	\\$
+defstr	#	"\\sharp{}"
+defstr	&	\\&
+defstr	%	\\%
+defstr	{	"\\Lb{}"
+defstr	|	"\\Vb{}"
+defstr	}	"\\Rb{}"
+defstr	[	"\\Lbracket{}"
+defstr	]	"\\Rbracket{}"
+defstr	^	"{\\tt \\char\"5E }"
+defstr	~	"{\\tt \\char\"7E }"
+defstr	_	"\\us{}"
+defstr	\\	"\\bs{}"
+defstr	-	"\\minus{}"
+defstr	*	"\\asta{}"
+defstr	>	"\\dai{}"
+defstr	<	"\\sho{}"
+
+defstr	­¡	"\\maru{1}"
+defstr	­¢	"\\maru{2}"
+defstr	­£	"\\maru{3}"
+defstr	­¤	"\\maru{4}"
+defstr	­¥	"\\maru{5}"
+defstr	­¦	"\\maru{6}"
+defstr	­§	"\\maru{7}"
+defstr	­¨	"\\maru{8}"
+defstr	­©	"\\maru{9}"
+defstr	­ª	"\\maru{10}"
+defstr	­µ	"\\leavevmode\\kern .25zw\\hbox{I}\\kern .25zw"
+defstr	­¶	"\\leavevmode\\kern .25zw\\hbox{I\\kern -.5pt I}\\kern .25zw"
+defstr	­·	"\\leavevmode\\kern .25zw\\hbox{I\\kern -.5pt I\\kern -.5pt I}\\kern .25zw"
+defstr	­¸	"\\leavevmode\\kern .25zw\\hbox{I\\kern -.5pt V}\\kern .25zw"
+defstr	­¹	"\\leavevmode\\kern .25zw\\hbox{V}\\kern .25zw"
+defstr	­º	"\\leavevmode\\kern .25zw\\hbox{V\\kern -.5pt I}\\kern .25zw"
+defstr	­»	"\\leavevmode\\kern .25zw\\hbox{V\\kern -.5pt I\\kern -.5pt I}\\kern .25zw"
+defstr	­¼	"\\leavevmode\\kern .25zw\\hbox{V\\kern -.5pt I\\kern -.5pt I\\kern -.5pt I}\\kern .25zw"
+defstr	­½	"\\leavevmode\\kern .25zw\\hbox{I\\kern -.5pt X}\\kern .25zw"
+defstr	­¾	"\\leavevmode\\kern .25zw\\hbox{X}\\kern .25zw"
+
+#
+#
+defescape	//
+
+deftab	2
+defsimple	comment	"%EWB "
+#
+deflist list	programi	2	0.00	NNY
+deflist list2	programii	2	0.00	NNY
+deflist list3	programiii	2	0.00	NNY
+deflist list4	programiv	4	0.00	YYY
+#
+defTable	table	hyoui	2	12.00	16.00	Y
+defTable	table2	hyouii	2	12.00	16.00	Y
+defTable	table3	hyouiii	2	19.00	26.00	Y
+defTable	table4	hyouiv	2	12.00	14.00	Y
+#
+
+#
+# Ã±½ãÃÖ´¹¥È¥ê¥¬
+#
+defsimple	h	"\\vspace{ .5\\baselineskip}"
+
+#
+# ¸«½Ğ¤·¥È¥ê¥¬
+#
+defcaption	i	chapter
+defchapter	chapter	
+defcaption	ii	section
+defchapter	section	
+defcaption	iii	subsection
+defchapter	subsection	
+defcaption	iiii	subsubsection
+defchapter	subsubsection	
+defcaption	iiiii	subsubsubsection
+defchapter	subsubsubsection	
+defcaption	I	part
+defchapter	part	
+defcaption	AI	Part
+defchapter	Part	
+defcaption	ai	Chapter
+defchapter	Chapter	
+defcaption	aii	Section
+defchapter	Section	
+defcaption	aiii	Subsection
+defchapter	Subsection	
+defcaption	II	ssection
+defchapter	ssection	
+
+#
+# ¿ŞÉ½¥È¥ê¥¬
+#
+deffigure	f	figurei	20.00
+deffigure	t	figureii	8.00
+deffigure	l	figureiii	8.00
+deffigure	s	figureiv	20.00
+
+#
+# ¥é¥Ù¥ë
+#
+deflabel	label	"\\label["	]
+defref	pageref	"\\pageref["	]
+defref	numref	"\\numref["	]
+defref	strref	"\\strref["	]
+
+#
+# ¥°¥ë¡¼¥×¥È¥ê¥¬
+#
+defgroup	c1	kogumi	Y
+defgroup	c2	kogumii	Y
+defgroup	c3	kogumiii	Y
+defgroup	c4	kogumiv	Y
+
+defgroup	j1	jisagei	N
+defgroup	j2	jisageii	N
+defgroup	j3	jisageiii	N
+defgroup	j4	jisageiv	N
+defgroup	j5	jisagev	N
+defgroup	j6	jisagevi	N
+defgroup	j7	jisagevii	N
+defgroup	j8	jisageviii	N
+defgroup	j9	jisageix	N
+defgroup	j10	jisagex	N
+
+#
+# ¶¯Ä´¥È¥ê¥¬
+#
+defgothic	g	"{\\gt{}"	}
+defgothic	tt	"{\\tt{}"	}
+
+#
+# ²Õ¾ò½ñ¥È¥ê¥¬
+#
+defitem	k1	kajyoi	Y
+defitem	k2	kajyoii	Y
+
+#
+# µÓÃí¥È¥ê¥¬
+#
+deffootnote	ky	\\footnote
+
+#
+# ¥­¡¼¥È¥Ã¥×
+#
+defgothic	key	\\keyi{	}
+defgothic	key2	\\keyii{	}
+defgothic	key3	\\keyiii{	}
+
+#
+# ·ÓÀş
+#
+defsimple	bkei	\\kei
+defsimple	ckei	\\keii
+defsimple	dkei	\\keiii
+defsimple	tkei	\\keiv
+defsimple	kei	\\kev
+
+#
+# °Ï¤ß·Ó
+#
+defgroup	w1	wakui	N
+defgroup	w2	wakuii	N
+defgroup	w3	wakuiii	N
+defgroup	w4	wakuiv	N
+defgroup	w5	wakuv	N
+defgroup	w6	wakuvi	N
+defgroup	w7	wakuvii	N
+
+#
+# ¥ë¥Ó
+#
+defgothic	rb1	"\\rubyi "	"\\end{}"
+
+#
+# ËµÅÀ
+#
+defgothic	bou1	"\\bouteni{"	"}"
+defgothic	bou2	"\\boutenii{"	"}"
+
+#
+# ¥Ï¥¤¥Ñ¡¼¥ê¥ó¥¯¥È¥ê¥¬
+#
+defurl	url	"\\ewbhyperurl{"	"}{"	"}"
+
+#
+# ÌÜ¼¡¥È¥ê¥¬
+#
+defgothic	TOCchapter	"\\TOCchapter{"	"}"
+defgothic	TOCSTRchapter	"\\TOCSTRchapter{"	"}"
+defref	TOCPAGEchapter	"\\TOCPAGEchapter{"	"}"
+defgothic	TOCsection	"\\TOCsection{"	"}"
+defgothic	TOCSTRsection	"\\TOCSTRsection{"	"}"
+defref	TOCPAGEsection	"\\TOCPAGEsection{"	"}"
+defgothic	TOCpart	"\\TOCpart{"	"}"
+defgothic	TOCSTRpart	"\\TOCSTRpart{"	"}"
+defref	TOCPAGEpart	"\\TOCPAGEpart{"	"}"
+defgothic	TOCPart	"\\TOCPart{"	"}"
+defgothic	TOCSTRPart	"\\TOCSTRPart{"	"}"
+defref	TOCPAGEPart	"\\TOCPAGEPart{"	"}"
+defgothic	TOCChapter	"\\TOCChapter{"	"}"
+defgothic	TOCSTRChapter	"\\TOCSTRChapter{"	"}"
+defref	TOCPAGEChapter	"\\TOCPAGEChapter{"	"}"
+defgothic	TOCSection	"\\TOCSection{"	"}"
+defgothic	TOCSTRSection	"\\TOCSTRSection{"	"}"
+defref	TOCPAGESection	"\\TOCPAGESection{"	"}"
+defgothic	TOCssection	"\\TOCssection{"	"}"
+defgothic	TOCSTRssection	"\\TOCSTRssection{"	"}"
+defref	TOCPAGEssection	"\\TOCPAGEssection{"	"}"
+
+#
+# Ï¢¿ô»ú
+#
+defgothic	suji	"\\rensuji*[c]{"	"}"
+
+#
+# EWBÉ½µ­
+#
+defsimple	ABOUTEWB	"\\ABOUTEWB{}"
+
+#
+# ÈÆÍÑ¿ŞÈÇ¥È¥ê¥¬
+#
+defnoexpand	TOBIRA	"\\TOBIRA "	"\\end{}"
+defnoexpand	ZUHAN	"\\ZUHAN "	"\\end{}"
+defnoexpand	ICON	"\\ICON "	"\\end{}"

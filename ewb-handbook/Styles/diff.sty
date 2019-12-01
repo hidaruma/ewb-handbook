@@ -1,0 +1,52 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 表組縦罫線
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\vlkei{\hbox to1.5mm{\vrule width.5mm height\x@ht depth\x@dp\hss}}
+\def\vckei{\hbox to3mm{\hss\vrule width.3mm height\x@ht depth\x@dp\hss}}
+\def\vrkei{\hbox to1.5mm{\hss\vrule width.5mm height\x@ht depth\x@dp}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 約物/記号表文字枠
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newbox\@@@tmpbox
+\def\WAKU#1{\setbox\@@@tmpbox\hbox{#1}\@WAKU}
+\def\TWAKU#1{\setbox\@@@tmpbox\hbox{\tate#1}\@WAKU}
+\def\@WAKU{\hbox{\hss\vrule width.1mm\vbox{\hsize\wd\@@@tmpbox\hrule height.1mm\box\@@@tmpbox\hrule height.1mm}\vrule width.1mm\hss}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% リスト書体追加（斜体）
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareCompositFont{sl@progi}{11Q}[11.00H]{JY1/mgo/b/n}[12Q]{OT1/cmtt/m/sl}[0.03zh]
+\copycomposit{sl@progii}{sl@progi}
+\newemph{sl}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 表紙
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% hyousi
+\DeclareCompositFont{hyousi}{60Q}[56.00H]{JY1/sgo/b/n}[40Q]{JE1/sgo/b/n}[0.03zh]
+\def\hyousi{\thispagestyle{empty}
+~\vskip50mm
+\centerline{\scalebox{1.2}{\includegraphics{FIG/ewbhandbook.eps}}}
+\hbox to\textwidth{\hss\selectcomposit{hyousi}ハンドブック}
+\vskip3mm
+\hbox to\textwidth{\hss\selectcomposit{hyousi}Version 3.3}
+\vfill
+\hbox to\textwidth{\hss\selectcomposit{subsection}株式会社アスキー 出版技術グループ}
+\clearpage
+\thispagestyle{ewbpagei}	% 次のページに柱を出力しない
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeXロゴ (ゴシック対応)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareRobustCommand{\LaTeX}{L\kern-.36em%
+\sbox\z@ T%
+\vbox to\ht0{\hbox{\kern.1em\scalebox{.6}{A}\kern.1em}\vss}%
+\kern-.15em%
+\TeX}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 書体サンプル読み込み
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\ZUII#1{\scalebox{.4}{\includegraphics{#1}}}

@@ -1,0 +1,26 @@
+Chapter 4
+//ai //in476書体一覧表
+
+  EWBで取り扱える和欧文書体の一覧表を次に掲載しておきます。
+
+//aii //TeXフォント
+
+//inc texfonts.doc
+
+//aii PS和文フォント
+
+//inc psjfonts.doc
+
+@@clearpage()
+//aii PostScript従属欧文フォント（プロポーショナルピッチ）
+
+//inc psjepfonts.doc
+
+//aii PostScript従属欧文フォント（コンスタントピッチ）
+
+//inc psjecfonts.doc
+
+@@clearpage()
+//aii PostScript欧文フォント
+
+//inc psefonts.doc
